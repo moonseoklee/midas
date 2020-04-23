@@ -1,18 +1,26 @@
-function func(){
-    chrome.tabs.executeScript(null,
-        {code:"document.querySelector('#englishName').value='떼걸룩'"});
+const func = () => {
+
+    chrome.storage.sync.get(['engName'], function(result) {
+        console.log('Value currently is ' + result.engName);
+    });
+
+    chrome.tabs.executeScript({file:"test.js"})
+
+
 }
 
-function name(e){
-    chrome.tabs.executeScript(null,
-        {code:"console.log(e)"});
+const name = () =>{
+    const {value : englishName} = engName
+    console.log(englishName)
+    chrome.storage.sync.set({'engName': englishName}, function() {
+        console.log('Value is set to ' + englishName);
+    });
 }
 
-document.addEventListener('DOMContentLoaded',function () {
-    var btn1 = document.querySelector('#btn1');
-    btn1.addEventListener("click",func);
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const engName = document.getElementById('engName');
+btn1.addEventListener("click",func);
+btn2.addEventListener("click",name);
 
-    var btn2 = document.querySelector('#btn2');
-    var engName = document.getElementById("englishName");
-    btn2.addEventListener("click",name(engName));
-})
+
