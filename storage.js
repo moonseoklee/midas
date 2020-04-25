@@ -1,7 +1,7 @@
 
-chrome.storage.sync.get(['engName','birthday','hobby','specialty','gender'], function(result) {
-    console.log('Value currently is ' + result.engName);
-    document.querySelector('#englishName').value=result.engName;
+chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army'], function(result) {
+
+    document.querySelector('#englishName').value=result.lastName+" "+result.firstName;
     document.querySelector('#birthday').value=result.birthday;
     document.querySelectorAll('[name="hobby"]')[0].value=result.hobby;
     document.querySelectorAll('[name="specialAbility"]')[0].value=result.specialty;
@@ -11,6 +11,9 @@ chrome.storage.sync.get(['engName','birthday','hobby','specialty','gender'], fun
     }else{
         document.querySelectorAll('[name="genderFlag"]')[1].checked=true;
     }
+    document.querySelectorAll('[name="military.militaryTypeCode"]')[result.army].checked=true;
+
+
 
 
 
