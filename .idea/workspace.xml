@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/popup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/storage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,8 @@
       <workItem from="1587631309296" duration="7525000" />
       <workItem from="1587649950863" duration="928000" />
       <workItem from="1587702433357" duration="8839000" />
-      <workItem from="1587800686030" duration="2680000" />
+      <workItem from="1587800686030" duration="2710000" />
+      <workItem from="1587885485371" duration="643000" />
     </task>
     <servers />
   </component>
@@ -71,9 +71,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1587713915392" />
-    <state x="652" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587800861459">
+    <state x="652" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587885505419">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="652" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587800861459" />
+    <state x="652" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587885505419" />
   </component>
 </project>

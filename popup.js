@@ -30,13 +30,13 @@ chrome.storage.local.get(['lastName','firstName','birthday','hobby','specialty',
     document.getElementById('hobby').value=result.hobby;
     document.getElementById('specialty').value=result.specialty;
     document.getElementById('army').value=result.army;
-    if(result.gender("남")){
+    if(result.gender=="Male"){
         document.getElementById('gender').value='Male'
     }else{
         document.getElementById('gender').value='Female'
     }
-
-
+    console.log(result.army)
+    document.getElementById('army').value='army'+(result.army+1).toString()
 
 
 });
