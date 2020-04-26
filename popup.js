@@ -8,20 +8,20 @@ const func = () => {
 const save = () =>{
 
     let armyDict = {"army1":0,"army2":1,"army3":2,"army4":3,"army5":4};
-
+//    let armyWhereDict= {"armyWhere1":'01',"armyWhere2":'02',"armyWhere3":'03',"armyWhere4":'04',"armyWhere5":'05',"armyWhere6":'06',"armyWhere7":'07',"armyWhere8":'08',"armyWhere9":'09',"armyWhere10":'10',"armyWhere11":'11',"armyWhere12":'99'};
     const lastName = inputLastname.value;
     const firstName = inputFirstname.value;
     const birthday = inputBirth.value
     const army = armyDict[inputArmy.value]
-
+    const armyWhere = inputArmyWhere.value
     const {value : gender} = inputGender
     const {value : hobby} = inputHobby
     const {value : specialty} = inputSpecialty
-    chrome.storage.local.set({'army':army , 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
+    chrome.storage.local.set({'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
 
     });
 }
-chrome.storage.local.get(['lastName','firstName','birthday','hobby','specialty','gender','army'], function(result) {
+chrome.storage.local.get(['lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
@@ -37,6 +37,8 @@ chrome.storage.local.get(['lastName','firstName','birthday','hobby','specialty',
     }
     console.log(result.army)
     document.getElementById('army').value='army'+(result.army+1).toString()
+    document.getElementById('armyWhere').value=result.armyWhere
+
 
 
 });
@@ -49,6 +51,7 @@ const inputGender = document.getElementById('gender');
 const inputHobby = document.getElementById('hobby');
 const inputSpecialty = document.getElementById('specialty');
 const inputArmy = document.getElementById('army');
+const inputArmyWhere = document.getElementById('armyWhere');
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
 

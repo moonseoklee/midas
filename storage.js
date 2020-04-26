@@ -1,5 +1,5 @@
 
-chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army'], function(result) {
+chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.querySelector('#englishName').value=result.lastName+" "+result.firstName;
     document.querySelector('#birthday').value=result.birthday;
@@ -12,8 +12,7 @@ chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty',
         document.querySelectorAll('[name="genderFlag"]')[1].checked=true;
     }
     document.querySelectorAll('[name="military.militaryTypeCode"]')[result.army].checked=true;
-
-
+    document.getElementById('militaryBranchCode').value=result.armyWhere;
 
 
 
