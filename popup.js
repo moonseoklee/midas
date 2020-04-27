@@ -14,10 +14,12 @@ const save = () =>{
     const birthday = inputBirth.value
     const army = armyDict[inputArmy.value]
     const armyWhere = inputArmyWhere.value
+    const armyPosition = inputArmyPosition.value
     const {value : gender} = inputGender
     const {value : hobby} = inputHobby
     const {value : specialty} = inputSpecialty
-    chrome.storage.local.set({'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
+
+    chrome.storage.local.set({'armyPosition':armyPosition,'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
 
     });
 }
@@ -52,6 +54,7 @@ const inputHobby = document.getElementById('hobby');
 const inputSpecialty = document.getElementById('specialty');
 const inputArmy = document.getElementById('army');
 const inputArmyWhere = document.getElementById('armyWhere');
+const inputArmyPosition = document.getElementById('armyPosition');
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
 
