@@ -17,6 +17,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,6 +38,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,7 +63,7 @@
       <workItem from="1587702433357" duration="8839000" />
       <workItem from="1587800686030" duration="2710000" />
       <workItem from="1587885485371" duration="1980000" />
-      <workItem from="1587960005274" duration="1052000" />
+      <workItem from="1587960005274" duration="2939000" />
     </task>
     <servers />
   </component>

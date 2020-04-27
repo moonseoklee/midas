@@ -11,7 +11,8 @@
 <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.17317" rel="stylesheet" type="text/css" />
 <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.17317" />
 <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.17317" />
-<link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1"/>
+<link type="text/css" rel="stylesheet" href="./midas.css" />
+<!--link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/themes/CSS/566a91c2977cdfcd478b4567.css?themeRevisionID=5dca5ac9a5e86d17235d90c1"/-->
 <style type="text/css">
     .form-label-left{
         width:150px;
@@ -266,6 +267,30 @@
                         <option value="10"> 소위 </option>
                         <option value="11"> 중위 </option>
                         <option value="12"> 대위 </option>
+                    </select>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_email" id="id_9">
+
+                <div id="cid_10" class="form-input">
+          <span class="form-sub-label-container " style="vertical-align:top">
+            <input type="text" id="armyStart" name="q6_input6" class="form-textbox validate[Email]" size="30" value=""  data-component="text" aria-labelledby="label_6 sublabel_input_6"  style="width:50%" />
+
+              <input  type="text" id="armyEnd" name="q6_input6" class="form-textbox validate[Email]" size="30" value=""  data-component="text" aria-labelledby="label_6 sublabel_input_6"  style="width:50%"/>
+            <label class="form-sub-label" for="birthday" id="ubabel_input_6" style="min-height:13px" aria-hidden="false"> ex)19940213 </label>
+          </span>
+                </div>
+            </li>
+            <li class="form-line" data-type="control_dropdown" style="margin-top:0px;margin-bottom:0">
+                <div class="form-input">
+                    <select class="form-dropdown" id="armyDischarge" name="q7_listOf7" style="width:150px" data-component="dropdown" aria-labelledby="label_7">
+                        <option value=""> 제대 구분  </option>
+                        <option value="01"> 만기제대 </option>
+                        <option value="02"> 소집해제 </option>
+                        <option value="03"> 의가사제대 </option>
+                        <option value="04"> 의병제대 </option>
+                        <option value="05"> 불명예제대 </option>
+                        <option value="06"> 상이제대 </option>
                     </select>
                 </div>
             </li>

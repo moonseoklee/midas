@@ -15,15 +15,19 @@ const save = () =>{
     const army = armyDict[inputArmy.value]
     const armyWhere = inputArmyWhere.value
     const armyPosition = inputArmyPosition.value
+    const armyStart = inputArmyStart.value
+    const armyEnd = inputArmyEnd.value
+    const armyDischarge = inputArmyDischarge.value
     const {value : gender} = inputGender
     const {value : hobby} = inputHobby
     const {value : specialty} = inputSpecialty
 
-    chrome.storage.local.set({'armyPosition':armyPosition,'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
+
+    chrome.storage.local.set({'armyDischarge':armyDischarge,'armyStart':armyStart,'armyEnd':armyEnd,'armyPosition':armyPosition,'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
 
     });
 }
-chrome.storage.local.get(['lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+chrome.storage.local.get(['armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
@@ -40,6 +44,10 @@ chrome.storage.local.get(['lastName','firstName','birthday','hobby','specialty',
     console.log(result.army)
     document.getElementById('army').value='army'+(result.army+1).toString()
     document.getElementById('armyWhere').value=result.armyWhere
+    document.getElementById('armyPosition').value=result.armyPosition
+    document.getElementById('armyStart').value=result.armyStart
+    document.getElementById('armyEnd').value=result.armyEnd
+    document.getElementById('armyDischarge').value=result.armyDischarge
 
 
 
@@ -55,6 +63,10 @@ const inputSpecialty = document.getElementById('specialty');
 const inputArmy = document.getElementById('army');
 const inputArmyWhere = document.getElementById('armyWhere');
 const inputArmyPosition = document.getElementById('armyPosition');
+const inputArmyStart = document.getElementById('armyStart');
+const inputArmyEnd = document.getElementById('armyEnd');
+const inputArmyDischarge = document.getElementById('armyDischarge');
+
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
 

@@ -1,5 +1,5 @@
 
-chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army','armyWhere','armyPosition'], function(result) {
+chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army','armyWhere','armyPosition','armyStart','armyEnd','armyDischarge'], function(result) {
 
     document.querySelector('#englishName').value=result.lastName+" "+result.firstName;
     document.querySelector('#birthday').value=result.birthday;
@@ -14,6 +14,9 @@ chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty',
     document.querySelectorAll('[name="military.militaryTypeCode"]')[result.army].checked=true;
     document.getElementById('militaryBranchCode').value=result.armyWhere;
     document.querySelectorAll('[name="military.militaryPositionCode"]')[0].value=result.armyPosition;
+    document.querySelectorAll('[name="military.militaryStartDate"]')[0].value=result.armyStart;
+    document.querySelectorAll('[name="military.militaryEndDate"]')[0].value=result.armyEnd;
+    document.querySelectorAll('[name="military.militaryDischargeCode"]')[0].value=result.armyDischarge;
 
 
 
