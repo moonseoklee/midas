@@ -27,7 +27,7 @@ const save = () =>{
 
     });
 }
-chrome.storage.local.get(['armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
@@ -69,5 +69,22 @@ const inputArmyDischarge = document.getElementById('armyDischarge');
 
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
+
+
+
+function tab_change(tab) {
+
+    choosen = tab;
+    getData();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var tab1 = document.getElementById('tab1');
+    var tab2 = document.getElementById('tab2');
+
+    tab1.onclick = function () { tab_change('bithumb'); }
+    tab2.onclick = function () { tab_change('upbit'); }
+
+});
 
 
