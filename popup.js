@@ -1,10 +1,13 @@
 const func = () => {
-
     chrome.tabs.executeScript({file:"storage.js"})
-
-
 }
 
+
+const func2 = () => {
+    chrome.tabs.executeScript({file: "jquery-min.js"}, function(){
+        chrome.tabs.executeScript({file:"high.js"})
+    });
+}
 const save = () =>{
 
     let armyDict = {"army1":0,"army2":1,"army3":2,"army4":3,"army5":4};
@@ -27,6 +30,11 @@ const save = () =>{
 
     });
 }
+const high=()=> {
+
+
+}
+
 chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
@@ -41,7 +49,7 @@ chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','
     }else{
         document.getElementById('gender').value='Female'
     }
-    console.log(result.army)
+
     document.getElementById('army').value='army'+(result.army+1).toString()
     document.getElementById('armyWhere').value=result.armyWhere
     document.getElementById('armyPosition').value=result.armyPosition
@@ -54,6 +62,7 @@ chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','
 });
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
 const inputLastname = document.getElementById('lastname');
 const inputFirstname = document.getElementById('firstname');
 const inputBirth = document.getElementById('birthday');
@@ -69,22 +78,9 @@ const inputArmyDischarge = document.getElementById('armyDischarge');
 
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
+console.log(btn1,btn2,btn3);
+btn3.addEventListener("click",func2);
 
 
-
-function tab_change(tab) {
-
-    choosen = tab;
-    getData();
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    var tab1 = document.getElementById('tab1');
-    var tab2 = document.getElementById('tab2');
-
-    tab1.onclick = function () { tab_change('bithumb'); }
-    tab2.onclick = function () { tab_change('upbit'); }
-
-});
 
 
