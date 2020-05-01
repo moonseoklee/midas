@@ -14,7 +14,7 @@ git clone https://github.com/moonseoklee/midas
 
 ```python
 #1 네이버 아이디 로그인
-#2 스킬, 프로젝트 등 정보 입력
+#2 스킬, 프로젝트 등 기술 입력
 #3 show result html!!
 ```
 
