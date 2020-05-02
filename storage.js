@@ -10,7 +10,7 @@ chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty',
     if( document.querySelectorAll('[name="specialAbility"]')[0]!=null){
     document.querySelectorAll('[name="specialAbility"]')[0].value=result.specialty;}
     if(document.querySelectorAll('[name="genderFlag"]')[0]!=null) {
-        if (result.gender == '남') {
+        if (result.gender == 'Male') {
             document.querySelectorAll('[name="genderFlag"]')[0].checked = true;
         } else {
             document.querySelectorAll('[name="genderFlag"]')[1].checked = true;
