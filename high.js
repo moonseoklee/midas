@@ -1,5 +1,5 @@
 
-chrome.storage.local.get(['highSchool'], function(result) {
+chrome.storage.local.get(['highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
 
     let highSchoolName = result.highSchool;
     let t = []
@@ -8,5 +8,8 @@ chrome.storage.local.get(['highSchool'], function(result) {
 
     $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
 
+
+    document.querySelectorAll('[name="highschool.graduationTypeCode"]')[result.highSchoolGraduate].checked=true;
+    document.querySelectorAll('[name="highschool.locationCode"]')[0].value = result.highSchoolLoc;
 
 });

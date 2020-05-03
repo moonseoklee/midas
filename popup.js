@@ -8,6 +8,9 @@ const func2 = () => {
         chrome.tabs.executeScript({file:"high.js"})
     });
 }
+
+
+
 const save = () =>{
 
     let armyDict = {"army1":0,"army2":1,"army3":2,"army4":3,"army5":4};
@@ -34,10 +37,13 @@ const save2=()=> {
 
     const highSchool = inputHighSchool.value;
 
-    chrome.storage.local.set({'highSchool':highSchool});
+    const highSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked').value;
+    const highSchoolLoc = inputHighSchoolLoc.value;
+
+    chrome.storage.local.set({'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
 }
 
-chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+chrome.storage.local.get(['highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
@@ -58,6 +64,8 @@ chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','
     document.getElementById('armyStart').value=result.armyStart
     document.getElementById('armyEnd').value=result.armyEnd
     document.getElementById('armyDischarge').value=result.armyDischarge
+    document.getElementById('highSchool').value=result.highSchool
+    document.getElementById('highSchoolGraduate').value=result.highSchoolGraduate
 
 
 
@@ -79,6 +87,12 @@ const inputArmyStart = document.getElementById('armyStart');
 const inputArmyEnd = document.getElementById('armyEnd');
 const inputArmyDischarge = document.getElementById('armyDischarge');
 const inputHighSchool = document.getElementById('highSchool');
+const inputHighSchoolLoc = document.getElementById('highSchoolLog');
+
+let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
+
+
+
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
 

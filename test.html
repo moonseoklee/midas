@@ -7,7 +7,6 @@
 
 </head>
 
-
 <link href="https://cdn.jotfor.ms/static/formCss.css?3.3.17317" rel="stylesheet" type="text/css" />
 <link type="text/css" media="print" rel="stylesheet" href="https://cdn.jotfor.ms/css/printForm.css?3.3.17317" />
 <link type="text/css" rel="stylesheet" href="https://cdn.jotfor.ms/css/styles/nova.css?3.3.17317" />
@@ -153,6 +152,9 @@
 
     /*PREFERENCES STYLE*//*__INSPECT_SEPERATOR__*/
     /* Injected CSS Code */
+    body {
+        min-width:330px;
+    }
 </style>
 
 <form class="jotform-form" action="https://submit.jotform.com/submit/201140748877460/" method="post" name="form_201140748877460" id="201140748877460" accept-charset="utf-8" autocomplete="on">
@@ -167,7 +169,7 @@
                         <h1 id="header_1" class="form-header" data-component="header">
                         </h1>
                         <div id="subHeader_1" class="form-subHeader">
-                            정보 입력
+                            기본 정보
                         </div>
                     </div>
                 </div>
@@ -331,7 +333,7 @@
                         <h1 class="form-header" data-component="header">
                         </h1>
                         <div class="form-subHeader">
-                            정보 입력
+                            학력 사항
                         </div>
                     </div>
                 </div>
@@ -348,9 +350,34 @@
           </span>
                 </div>
             </li>
+            <div>
+                <label>
+                    <input type="radio" name="highschool.graduationTypeCode" value="0" required="" checked="">
+                    <span class="label">졸업</span>
+                </label>
+                <label>
+                    <input type="radio" name="highschool.graduationTypeCode" value="1" required="" checked="" >
+                    <span class="label">졸업예정</span>
+                </label>
+                <label>
+                    <input type="radio" name="highschool.graduationTypeCode" value="2" required="" checked="">
+                    <span class="label">중퇴</span>
+                </label>
+                <label>
+                    <input type="radio" name="highschool.graduationTypeCode" value="3" required="" checked="">
+                    <span class="label">휴학</span>
+                </label>
+                <label>
+                    <input type="radio" name="highschool.graduationTypeCode" value="4" required="" checked="">
+                    <span class="label">재학</span>
+                </label>
 
-
-            <li class="form-line" data-type="control_button" >
+            </div>
+            <div>
+            <label class="span per15 title ">학교소재지</label>
+            <label class="span per15 select"><select id = "highSchoolLog" name="highschool.locationCode" data-rel-target="highschool">		<option value="">학교소재지</option>	<option value="101">서울</option>	<option value="102" selected="">부산</option>	<option value="103">대구</option>	<option value="104">인천</option>	<option value="105">광주</option>	<option value="106">대전</option>	<option value="107">울산</option>	<option value="108">경기</option>	<option value="109">강원</option>	<option value="110">충북</option>	<option value="111">충남</option>	<option value="112">전북</option>	<option value="113">전남</option>	<option value="114">경북</option>	<option value="115">경남</option>	<option value="116">제주</option>	<option value="117">세종</option>	<option value="201">미국</option>	<option value="202">일본</option>	<option value="203">프랑스</option>	<option value="204">호주</option>	<option value="205">중국</option>	<option value="206">영국</option>	<option value="207">독일</option>	<option value="208">캐나다</option>	<option value="209">스웨덴</option>	<option value="210">핀란드</option>	<option value="211">이탈리아</option>	<option value="212">러시아</option>	<option value="213">대만</option>	<option value="214">인도네시아</option>	<option value="215">말레이시아</option>	<option value="216">방글라데시</option>	<option value="217">싱가폴</option>	<option value="218">인도</option>	<option value="219">필리핀</option>	<option value="220">홍콩</option>	<option value="221">베트남</option>	<option value="222">뉴질랜드</option>	<option value="223">오세아니아</option>	<option value="224">중남미</option>	<option value="225">아프리카</option>	<option value="901">기타 아시아</option>	<option value="902">기타 유럽</option>	<option value="999">기타 지역</option>	</select></label>
+            </div>
+                <li class="form-line" data-type="control_button" >
                 <div class="form-input-wide">
                     <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper  ">
                         <button id="btn3" type="submit" class="form-submit-button" data-component="button" data-content="">
@@ -380,6 +407,8 @@
 <script src="jquery-min.js"></script>
 <script src="popup.js"></script>
 <script src="high.js"></script>
+
+
 
 
 </html>
