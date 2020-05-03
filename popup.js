@@ -30,9 +30,11 @@ const save = () =>{
 
     });
 }
-const high=()=> {
+const save2=()=> {
 
+    const highSchool = inputHighSchool.value;
 
+    chrome.storage.local.set({'highSchool':highSchool});
 }
 
 chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
@@ -63,6 +65,7 @@ chrome.storage.local.get(['armyPosition','armyDischarge','armyStart','armyEnd','
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
+const btn4 = document.getElementById('btn4');
 const inputLastname = document.getElementById('lastname');
 const inputFirstname = document.getElementById('firstname');
 const inputBirth = document.getElementById('birthday');
@@ -75,12 +78,12 @@ const inputArmyPosition = document.getElementById('armyPosition');
 const inputArmyStart = document.getElementById('armyStart');
 const inputArmyEnd = document.getElementById('armyEnd');
 const inputArmyDischarge = document.getElementById('armyDischarge');
-
+const inputHighSchool = document.getElementById('highSchool');
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
-console.log(btn1,btn2,btn3);
-btn3.addEventListener("click",func2);
 
+btn3.addEventListener("click",save2);
+btn4.addEventListener("click",func2);
 
 
 

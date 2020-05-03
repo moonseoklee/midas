@@ -1,16 +1,12 @@
 
-chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army','armyWhere','armyPosition','armyStart','armyEnd','armyDischarge'], function(result) {
+chrome.storage.local.get(['highSchool'], function(result) {
 
-    var e = $.Event("keypress");
-    e.which = 13;
-    e.keyCode = 13;
-    document.querySelectorAll('[data-type="highschool"]')[0].value="정발";
-    console.log(e)
-    $(document.querySelectorAll('[data-type="highschool"]')[0]).trigger(e);
+    let highSchoolName = result.highSchool;
+    let t = []
+    t.push(`<span>${highSchoolName}</span>`);
+    t.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
 
-
-
-
+    $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
 
 
 });
