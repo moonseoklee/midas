@@ -1,11 +1,11 @@
 const func = () => {
-    chrome.tabs.executeScript({file:"storage.js"})
+    chrome.tabs.executeScript({file:"page1.js"})
 }
 
 
 const func2 = () => {
     chrome.tabs.executeScript({file: "jquery-min.js"}, function(){
-        chrome.tabs.executeScript({file:"high.js"})
+        chrome.tabs.executeScript({file:"page2.js"})
     });
 }
 
