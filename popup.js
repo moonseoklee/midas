@@ -39,11 +39,14 @@ const save2=()=> {
 
     const highSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked').value;
     const highSchoolLoc = inputHighSchoolLoc.value;
-
-    chrome.storage.local.set({'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
+    const highSchoolCategory = inputHighSchoolCategory.value;
+    const highSchoolDay = document.querySelector('input[name = "highschool.dayOrNight"]:checked').value;
+    const highSchoolStart = inputHighSchoolStart.value;
+    const highSchoolEnd = inputHighSchoolEnd.value;
+    chrome.storage.local.set({'highSchoolStart':highSchoolStart,'highSchoolEnd':highSchoolEnd,'highSchoolDay':highSchoolDay,'highSchoolCategory':highSchoolCategory,'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
 }
 
-chrome.storage.local.get(['highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+chrome.storage.local.get(['highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
@@ -66,6 +69,9 @@ chrome.storage.local.get(['highSchool','highSchoolGraduate','armyPosition','army
     document.getElementById('armyDischarge').value=result.armyDischarge
     document.getElementById('highSchool').value=result.highSchool
     document.getElementById('highSchoolGraduate').value=result.highSchoolGraduate
+    document.getElementById('highSchoolCategory').value=result.highSchoolCategory
+    document.getElementById('highSchoolStart').value=result.highSchoolStart
+    document.getElementById('highSchoolEnd').value=result.highSchoolEnd
 
 
 
@@ -88,8 +94,10 @@ const inputArmyEnd = document.getElementById('armyEnd');
 const inputArmyDischarge = document.getElementById('armyDischarge');
 const inputHighSchool = document.getElementById('highSchool');
 const inputHighSchoolLoc = document.getElementById('highSchoolLog');
-
-let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
+const inputHighSchoolCategory = document.getElementById('highSchoolCategory');
+const inputHighSchoolStart = document.getElementById('highSchoolStart');
+const inputHighSchoolEnd = document.getElementById('highSchoolEnd');
+//let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
 
 
 
