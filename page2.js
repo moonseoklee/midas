@@ -9,7 +9,7 @@ chrome.storage.local.get(['highSchoolStart','highSchoolEnd','highSchoolDay','hig
     $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
 
 
-    document.querySelectorAll('[name="highschool.graduationTypeCode"]')[result.highSchoolGraduate].checked=true;
+    document.querySelectorAll('[name="highschool.graduationTypeCode"]')[(result.highSchoolGraduate)].checked=true;
     document.querySelectorAll('[name="highschool.locationCode"]')[0].value = result.highSchoolLoc;
     document.querySelectorAll('[name="highschool.highschoolCategoryCode"]')[0].value = result.highSchoolCategory;
     document.querySelectorAll('[name="highschool.dayOrNight"]')[result.highSchoolDay].checked=true;

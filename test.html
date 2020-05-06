@@ -352,34 +352,34 @@
             </li>
             <div>
                 <label>
-                    <input type="radio" name="highschool.graduationTypeCode" value="0" required="" checked="">
+                    <input type="radio" name="highSchoolGraduate" value="0" required="" checked="">
                     <span class="label">졸업</span>
                 </label>
                 <label>
-                    <input type="radio" name="highschool.graduationTypeCode" value="1" required="" checked="" >
+                    <input type="radio" name="highSchoolGraduate" value="1" required="" checked="" >
                     <span class="label">졸업예정</span>
                 </label>
                 <label>
-                    <input type="radio" name="highschool.graduationTypeCode" value="2" required="" checked="">
+                    <input type="radio" name="highSchoolGraduate" value="2" required="" checked="">
                     <span class="label">중퇴</span>
                 </label>
                 <label>
-                    <input type="radio" name="highschool.graduationTypeCode" value="3" required="" checked="">
+                    <input type="radio" name="highSchoolGraduate" value="3" required="" checked="">
                     <span class="label">휴학</span>
                 </label>
                 <label>
-                    <input type="radio" name="highschool.graduationTypeCode" value="4" required="" checked="">
+                    <input type="radio" name="highSchoolGraduate" value="4" required="" checked="">
                     <span class="label">재학</span>
                 </label>
 
             </div>
             <div>
                 <label class="span per15 title ">학교소재지</label>
-                <label class="span per15 select"><select id = "highSchoolLog" name="highschool.locationCode" data-rel-target="highschool">		<option value="">학교소재지</option>	<option value="101">서울</option>	<option value="102" selected="">부산</option>	<option value="103">대구</option>	<option value="104">인천</option>	<option value="105">광주</option>	<option value="106">대전</option>	<option value="107">울산</option>	<option value="108">경기</option>	<option value="109">강원</option>	<option value="110">충북</option>	<option value="111">충남</option>	<option value="112">전북</option>	<option value="113">전남</option>	<option value="114">경북</option>	<option value="115">경남</option>	<option value="116">제주</option>	<option value="117">세종</option>	<option value="201">미국</option>	<option value="202">일본</option>	<option value="203">프랑스</option>	<option value="204">호주</option>	<option value="205">중국</option>	<option value="206">영국</option>	<option value="207">독일</option>	<option value="208">캐나다</option>	<option value="209">스웨덴</option>	<option value="210">핀란드</option>	<option value="211">이탈리아</option>	<option value="212">러시아</option>	<option value="213">대만</option>	<option value="214">인도네시아</option>	<option value="215">말레이시아</option>	<option value="216">방글라데시</option>	<option value="217">싱가폴</option>	<option value="218">인도</option>	<option value="219">필리핀</option>	<option value="220">홍콩</option>	<option value="221">베트남</option>	<option value="222">뉴질랜드</option>	<option value="223">오세아니아</option>	<option value="224">중남미</option>	<option value="225">아프리카</option>	<option value="901">기타 아시아</option>	<option value="902">기타 유럽</option>	<option value="999">기타 지역</option>	</select></label>
+                <label class="span per15 select"><select id = "highSchoolLoc" name="highschool.locationCode" data-rel-target="highschool">		<option value="">학교소재지</option>	<option value="101">서울</option>	<option value="102" selected="">부산</option>	<option value="103">대구</option>	<option value="104">인천</option>	<option value="105">광주</option>	<option value="106">대전</option>	<option value="107">울산</option>	<option value="108">경기</option>	<option value="109">강원</option>	<option value="110">충북</option>	<option value="111">충남</option>	<option value="112">전북</option>	<option value="113">전남</option>	<option value="114">경북</option>	<option value="115">경남</option>	<option value="116">제주</option>	<option value="117">세종</option>	<option value="201">미국</option>	<option value="202">일본</option>	<option value="203">프랑스</option>	<option value="204">호주</option>	<option value="205">중국</option>	<option value="206">영국</option>	<option value="207">독일</option>	<option value="208">캐나다</option>	<option value="209">스웨덴</option>	<option value="210">핀란드</option>	<option value="211">이탈리아</option>	<option value="212">러시아</option>	<option value="213">대만</option>	<option value="214">인도네시아</option>	<option value="215">말레이시아</option>	<option value="216">방글라데시</option>	<option value="217">싱가폴</option>	<option value="218">인도</option>	<option value="219">필리핀</option>	<option value="220">홍콩</option>	<option value="221">베트남</option>	<option value="222">뉴질랜드</option>	<option value="223">오세아니아</option>	<option value="224">중남미</option>	<option value="225">아프리카</option>	<option value="901">기타 아시아</option>	<option value="902">기타 유럽</option>	<option value="999">기타 지역</option>	</select></label>
                 <label class="span per15 title  devider">계열</label>
                 <label class="span per15 select"><select id = "highSchoolCategory" name="highschool.highschoolCategoryCode" data-rel-target="highschool">		<option value="">계열</option>	<option value="01">인문</option>	<option value="02">상업</option>	<option value="03" selected="">공업</option>	<option value="04">전산정보</option>	<option value="05">예술</option>	<option value="06">농업</option>	<option value="07">과학</option>	<option value="08">외국어</option>	<option value="09">체육</option>	<option value="10">마이스터</option>	<option value="11">특성화</option>	<option value="99">기타</option>	</select></label>
 
-                <div class="span per20 radio">	<label><input type="radio" name="highschool.dayOrNight" value="0" data-rel-target="highschool"><span class="label">주간</span></label>	<label><input type="radio" name="highschool.dayOrNight" value="1" data-rel-target="highschool"><span class="label">야간</span></label>	</div>
+                <div class="span per20 radio">	<label><input type="radio" name="highSchoolDay" value="0" data-rel-target="highschool"><span class="label">주간</span></label>	<label><input type="radio" name="highSchoolDay" value="1" data-rel-target="highschool"><span class="label">야간</span></label>	</div>
                 <span class="form-sub-label-container " style="vertical-align:top">
             <input type="text" id="highSchoolStart" name="q6_input6" class="form-textbox validate[Email]" size="30" value=""  data-component="text" aria-labelledby="label_6 sublabel_input_6"  style="width:50%" />
 

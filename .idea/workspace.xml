@@ -52,6 +52,18 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -80,6 +92,7 @@
       <workItem from="1588480291030" duration="5416000" />
       <workItem from="1588595431677" duration="1348000" />
       <workItem from="1588666347102" duration="1544000" />
+      <workItem from="1588752140531" duration="3120000" />
     </task>
     <servers />
   </component>
