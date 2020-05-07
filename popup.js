@@ -17,7 +17,7 @@ const save = () =>{
 //    let armyWhereDict= {"armyWhere1":'01',"armyWhere2":'02',"armyWhere3":'03',"armyWhere4":'04',"armyWhere5":'05',"armyWhere6":'06',"armyWhere7":'07',"armyWhere8":'08',"armyWhere9":'09',"armyWhere10":'10',"armyWhere11":'11',"armyWhere12":'99'};
     const lastName = inputLastname.value;
     const firstName = inputFirstname.value;
-    const birthday = inputBirth.value
+    const birthday = inputBirthY.value+inputBirthM.value+inputBirthD.value;
     const army = armyDict[inputArmy.value]
     const armyWhere = inputArmyWhere.value
     const armyPosition = inputArmyPosition.value
@@ -32,6 +32,8 @@ const save = () =>{
     chrome.storage.local.set({'armyDischarge':armyDischarge,'armyStart':armyStart,'armyEnd':armyEnd,'armyPosition':armyPosition,'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
 
     });
+    console.log('tabc on')
+    tabController('page1');
 }
 const save2=()=> {
 
@@ -50,7 +52,9 @@ chrome.storage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','hig
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
-    document.getElementById('birthday').value=result.birthday;
+    document.getElementById('birthday1').value=result.birthday.slice(4,6);
+    document.getElementById('birthday2').value=result.birthday.slice(6,8);
+    document.getElementById('birthday3').value=result.birthday.slice(0,4);
 
     document.getElementById('hobby').value=result.hobby;
     document.getElementById('specialty').value=result.specialty;
@@ -67,7 +71,7 @@ chrome.storage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','hig
     document.getElementById('armyStart').value=result.armyStart
     document.getElementById('armyEnd').value=result.armyEnd
     document.getElementById('armyDischarge').value=result.armyDischarge
-    document.getElementById('highSchool').value=result.highSchool
+    /*document.getElementById('highSchool').value=result.highSchool
     document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
 
 
@@ -76,7 +80,7 @@ chrome.storage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','hig
     console.log(result.highSchoolStart);
     document.getElementById('highSchoolStart').value=result.highSchoolStart
     document.getElementById('highSchoolEnd').value=result.highSchoolEnd
-    document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;
+    document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;*/
 
 
 
@@ -87,7 +91,9 @@ const btn3 = document.getElementById('btn3');
 const btn4 = document.getElementById('btn4');
 const inputLastname = document.getElementById('lastname');
 const inputFirstname = document.getElementById('firstname');
-const inputBirth = document.getElementById('birthday');
+const inputBirthM = document.getElementById('birthday1');
+const inputBirthD = document.getElementById('birthday2');
+const inputBirthY = document.getElementById('birthday3');
 const inputGender = document.getElementById('gender');
 const inputHobby = document.getElementById('hobby');
 const inputSpecialty = document.getElementById('specialty');
@@ -109,8 +115,8 @@ const inputHighSchoolEnd = document.getElementById('highSchoolEnd');
 btn1.addEventListener("click",func);
 btn2.addEventListener("click",save);
 
-btn3.addEventListener("click",save2);
-btn4.addEventListener("click",func2);
+//btn3.addEventListener("click",save2);
+//btn4.addEventListener("click",func2);
 
 
 

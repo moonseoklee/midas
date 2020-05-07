@@ -12,7 +12,7 @@
   },
   "browser_action": {
     "default_title": "Midas",
-    "default_popup": "test.html"
+    "default_popup": "/form/test2.html"
   },
   "permissions": [
     "https://*/*",

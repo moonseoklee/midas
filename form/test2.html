@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"  http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="view.css" media="all">
+
+    <script type="text/javascript" src="calendar.js"></script>
+
+    <style>
+        body {font-family: Arial;}
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        body {
+            min-width:330px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="tab">
+    <button class="tablinks" id="tab1">Page 1</button>
+    <button class="tablinks" id="tab2">Page 2</button>
+    <button class="tablinks" id="tab3">Page 3</button>
+</div>
+
+<div id="page1" class="tabcontent" style="display:block">
+    <body id="main_body" >
+
+    <img id="top" src="top.png" alt="">
+    <div id="form_container">
+
+        <h1><a>Midas auto form</a></h1>
+        <form id="form_108925" class="appnitro"  method="post" action="">
+            <div class="form_description">
+                <h2>Midas auto form</h2>
+                <p></p>
+            </div>
+            <ul >
+
+                <li class="section_break">
+                    <h3>기본사항</h3>
+                    <p></p>
+                </li>		<li id="li_1" >
+                <label class="description" for="gender">성별 </label>
+                <div>
+                    <select class="element select small" id="gender" name="element_1">
+                        <option value="" selected="selected"></option>
+                        <option value="Male" >남</option>
+                        <option value="Female" >여</option>
+
+                    </select>
+                </div><!--p class="guidelines" id="guide_1"><small>성별</small></p-->
+            </li>		<li id="li_2" >
+                <label class="description" for="element_2">영문 이름 </label>
+                <span>
+			<input id="firstname" name= "element_2_1" class="element text" maxlength="255" size="8" value=""/>
+			<label>First</label>
+		</span>
+                <span>
+			<input id="lastname" name= "element_2_2" class="element text" maxlength="255" size="14" value=""/>
+			<label>Last</label>
+		</span>
+            </li>		<li id="li_3" >
+                <label class="description" for="birthday">생년월일 </label>
+                <span>
+			<input id="birthday1" name="element_3_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="birthday1">MM</label>
+		</span>
+                <span>
+			<input id="birthday2" name="element_3_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="birthday2">DD</label>
+		</span>
+                <span>
+	 		<input id="birthday3" name="element_3_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="birthday3">YYYY</label>
+		</span>
+
+
+
+            </li>		<li id="li_4" >
+                <label class="description" for="specialty">특기 </label>
+                <div>
+                    <input id="specialty" name="element_4" class="element text medium" type="text" maxlength="255" value=""/>
+                </div>
+            </li>		<li id="li_5" >
+                <label class="description" for="hobby">취미 </label>
+                <div>
+                    <input id="hobby" name="element_5" class="element text medium" type="text" maxlength="255" value=""/>
+                </div>
+            </li>		<li class="section_break">
+                <h3>병역
+                </h3>
+                <p></p>
+            </li>		<li id="li_10" >
+                <label class="description" for="army">병역사항 </label>
+                <div>
+                    <select class="element select small" id="army" name="element_10">
+                        <option value="">  </option>
+                        <option value="army1"> 비대상 </option>
+                        <option value="army2"> 군필 </option>
+                        <option value="army3"> 미필 </option>
+                        <option value="army4"> 면제 </option>
+                        <option value="army5"> 복무중 </option>
+
+                    </select>
+                </div>
+            </li>		<li id="li_11" >
+                <label class="description" for="armyWhere">병역사항 </label>
+                <div>
+                    <select class="element select small" id="armyWhere" name="element_11">
+                        <option value="">  </option>
+                        <option value="01"> 육군 </option>
+                        <option value="02"> 해군 </option>
+                        <option value="03"> 공군 </option>
+                        <option value="04"> 해병 </option>
+                        <option value="05"> 전경 </option>
+                        <option value="06"> 의경 </option>
+                        <option value="07"> 해경 </option>
+                        <option value="08"> 공익 </option>
+                        <option value="09"> 병역특례 </option>
+                        <option value="10"> 카투사 </option>
+                        <option value="11"> 의무소방 </option>
+                        <option value="99"> 기타 </option>
+
+                    </select>
+                </div>
+            </li>		<li id="li_12" >
+                <label class="description" for="armyPosition">병역사항 </label>
+                <div>
+                    <select class="element select small" id="armyPosition" name="element_12">
+                        <option value=""> 군별 선택  </option>
+                        <option value="01"> 이병 </option>
+                        <option value="02"> 일병 </option>
+                        <option value="03"> 상병 </option>
+                        <option value="04"> 병장 </option>
+                        <option value="05"> 하사 </option>
+                        <option value="06"> 중사 </option>
+                        <option value="07"> 상사 </option>
+                        <option value="08"> 원사 </option>
+                        <option value="09"> 준위 </option>
+                        <option value="10"> 소위 </option>
+                        <option value="11"> 중위 </option>
+                        <option value="12"> 대위 </option>
+
+                    </select>
+                </div>
+            </li>
+                <li id="li_13" >
+                    <label class="description" for="armyPosition">병역사항 </label>
+                    <div>
+                        <select class="element select small" id="armyDischarge" name="element_12">
+                            <option value=""> 제대 구분  </option>
+                            <option value="01"> 만기제대 </option>
+                            <option value="02"> 소집해제 </option>
+                            <option value="03"> 의가사제대 </option>
+                            <option value="04"> 의병제대 </option>
+                            <option value="05"> 불명예제대 </option>
+                            <option value="06"> 상이제대 </option>
+
+                        </select>
+                    </div>
+                </li>
+                <li id="li_8" >
+                <label class="description" for="armyStart">입대일자 </label>
+                <span>
+			<input id="armyStart" name="element_8_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="armyStart">MM</label>
+		</span>
+
+
+                <span id="calendar_8">
+			<img id="cal_img_8" class="datepicker" src="calendar.gif" alt="Pick a date.">
+		</span>
+
+
+            </li>		<li id="li_9" >
+                <label class="description" for="armyEnd">전역일자 </label>
+                <span>
+			<input id="armyEnd" name="element_9_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="armyEnd">MM</label>
+		</span>
+
+
+                <span id="calendar_9">
+			<img id="cal_img_9" class="datepicker" src="calendar.gif" alt="Pick a date.">
+		</span>
+
+
+            </li>
+
+                <li class="form-line" data-type="control_button" id="id_2">
+                    <div id="cid_2" class="form-input-wide">
+                        <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper  ">
+                            <button id="btn2" type="submit" class="form-submit-button" data-component="button" data-content="">
+                                Save
+                            </button>
+                            <button id="btn1" type="submit" class="form-submit-button" data-component="button" data-content="">
+                                적용
+                            </button>
+
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <div id="footer">
+            Generated by <a href="http://www.phpform.org">pForm</a>
+        </div>
+    </div>
+    <img id="bottom" src="bottom.png" alt="">
+    </body>
+</div>
+
+<div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script src="tabController.js"></script>
+<script src="../popup.js"></script>
+<script src="../jquery-min.js"></script>
+
+
+
+
+
+
+</body>
+</html>
