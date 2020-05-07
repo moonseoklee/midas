@@ -68,13 +68,13 @@
         <h1><a>Midas auto form</a></h1>
         <form id="form_108925" class="appnitro"  method="post" action="">
             <div class="form_description">
-                <h2>Midas auto form</h2>
+                <h2>기본 사항</h2>
                 <p></p>
             </div>
             <ul >
 
                 <li class="section_break">
-                    <h3>기본사항</h3>
+
                     <p></p>
                 </li>		<li id="li_1" >
                 <label class="description" for="gender">성별 </label>
@@ -199,8 +199,8 @@
                 <li id="li_8" >
                 <label class="description" for="armyStart">입대일자 </label>
                 <span>
-			<input id="armyStart" name="element_8_1" class="element text" size="2" maxlength="2" value="" type="text"> /
-			<label for="armyStart">MM</label>
+			<input id="armyStart" name="element_8_1" class="element text" size="8" maxlength="8" value="" type="text"> /
+			<label for="armyStart">YYYYMMDD</label>
 		</span>
 
 
@@ -212,8 +212,8 @@
             </li>		<li id="li_9" >
                 <label class="description" for="armyEnd">전역일자 </label>
                 <span>
-			<input id="armyEnd" name="element_9_1" class="element text" size="2" maxlength="2" value="" type="text"> /
-			<label for="armyEnd">MM</label>
+			<input id="armyEnd" name="element_9_1" class="element text" size="8" maxlength="8" value="" type="text"> /
+			<label for="armyEnd">YYYYMMDD</label>
 		</span>
 
 
@@ -227,11 +227,11 @@
                 <li class="form-line" data-type="control_button" id="id_2">
                     <div id="cid_2" class="form-input-wide">
                         <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper  ">
-                            <button id="btn2" type="submit" class="form-submit-button" data-component="button" data-content="">
+                            <button id="btnSave1" type="submit" class="form-submit-button" data-component="button" data-content="">
                                 Save
                             </button>
-                            <button id="btn1" type="submit" class="form-submit-button" data-component="button" data-content="">
-                                적용
+                            <button id="btnApply1" type="submit" class="form-submit-button" data-component="button" data-content="">
+                                Apply
                             </button>
 
 
@@ -248,9 +248,101 @@
     </body>
 </div>
 
-<div id="Paris" class="tabcontent">
-    <h3>Paris</h3>
-    <p>Paris is the capital of France.</p>
+<div id="page2" class="tabcontent">
+    <body id="main_body" >
+
+    <img id="top" src="top.png" alt="">
+    <div id="form_container">
+
+        <h1><a>Midas auto form</a></h1>
+        <form id="form_108925" class="appnitro"  method="post" action="">
+            <div class="form_description">
+                <h2>학력 사항</h2>
+                <p></p>
+            </div>
+            <ul >
+
+                <li class="section_break">
+
+                    <p></p>
+                </li>		<li id="li_8" >
+                <label class="description" for="highSchool">고등학교 이름 </label>
+                <div>
+                    <input id="highSchool" name="element_8" class="element text medium" type="text" maxlength="255" value=""/>
+                </div>
+            </li>		<li id="li_11" >
+                <label class="description" for="element_11">졸업 여부 </label>
+                <span>
+			<input name="highSchoolGraduate" class="element radio" type="radio" value="0" />
+        <label class="choice" for="element_11_1">졸업</label>
+                     <input  name="highSchoolGraduate" class="element radio" type="radio" value="1" />
+        <label class="choice" for="element_11_2">졸업예정</label>
+          <input name="highSchoolGraduate" class="element radio" type="radio" value="2" />
+        <label class="choice" for="element_11_3">중퇴</label>
+                    <input name="highSchoolGraduate" class="element radio" type="radio" value="3" />
+        <label class="choice" for="element_11_4">휴학</label>
+                    <input name="highSchoolGraduate" class="element radio" type="radio" value="4" />
+        <label class="choice" for="element_11_5">재학</label>
+
+		</span>
+            </li>		<li id="li_12" >
+                <label class="description" for="element_12">학교소재지 </label>
+                <div>
+                    <label class="span per15 select">
+                    <select id = "highSchoolLoc" name="highschool.locationCode" data-rel-target="highschool">		<option value="">학교소재지</option>	<option value="101">서울</option>	<option value="102" selected="">부산</option>	<option value="103">대구</option>	<option value="104">인천</option>	<option value="105">광주</option>	<option value="106">대전</option>	<option value="107">울산</option>	<option value="108">경기</option>	<option value="109">강원</option>	<option value="110">충북</option>	<option value="111">충남</option>	<option value="112">전북</option>	<option value="113">전남</option>	<option value="114">경북</option>	<option value="115">경남</option>	<option value="116">제주</option>	<option value="117">세종</option>	<option value="201">미국</option>	<option value="202">일본</option>	<option value="203">프랑스</option>	<option value="204">호주</option>	<option value="205">중국</option>	<option value="206">영국</option>	<option value="207">독일</option>	<option value="208">캐나다</option>	<option value="209">스웨덴</option>	<option value="210">핀란드</option>	<option value="211">이탈리아</option>	<option value="212">러시아</option>	<option value="213">대만</option>	<option value="214">인도네시아</option>	<option value="215">말레이시아</option>	<option value="216">방글라데시</option>	<option value="217">싱가폴</option>	<option value="218">인도</option>	<option value="219">필리핀</option>	<option value="220">홍콩</option>	<option value="221">베트남</option>	<option value="222">뉴질랜드</option>	<option value="223">오세아니아</option>	<option value="224">중남미</option>	<option value="225">아프리카</option>	<option value="901">기타 아시아</option>	<option value="902">기타 유럽</option>	<option value="999">기타 지역</option>	</select>
+                    </label>
+                </div>
+            </li>		<li id="li_13" >
+                <label class="description" for="element_13">계열 </label>
+                <div>
+                    <select id = "highSchoolCategory" name="highschool.highschoolCategoryCode" data-rel-target="highschool">		<option value="">계열</option>	<option value="01">인문</option>	<option value="02">상업</option>	<option value="03" selected="">공업</option>	<option value="04">전산정보</option>	<option value="05">예술</option>	<option value="06">농업</option>	<option value="07">과학</option>	<option value="08">외국어</option>	<option value="09">체육</option>	<option value="10">마이스터</option>	<option value="11">특성화</option>	<option value="99">기타</option>	</select>
+                </div>
+            </li>		<li id="li_14" >
+                <label class="description" for="element_14"> </label>
+                <span>
+			<input id="element_14_1" name="highSchoolDay" class="element radio" type="radio" value="0" />
+<label class="choice" for="element_14_1">주간</label>
+<input id="element_14_2" name="highSchoolDay" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_14_2">야간</label>
+
+		</span>
+            </li>		<li id="li_8" >
+                <label class="description" for="armyStart">입학</label>
+                <span>
+			<input id="highSchoolStart" name="element_8_1" class="element text" size="8" maxlength="8" value="" type="text"> /
+			<label for="armyStart">YYYYMMDD</label>
+		</span>
+
+
+
+
+            </li>		<li id="li_9" >
+                <label class="description" for="armyEnd">졸업 </label>
+                <span>
+			<input id="highSchoolEnd" name="element_9_1" class="element text" size="8" maxlength="8" value="" type="text"> /
+			<label for="armyEnd">YYYYMMDD</label>
+		</span>
+
+
+
+
+
+            </li>
+
+                <button id="btnSave2" type="submit" class="form-submit-button" data-component="button" data-content="">
+                    Save
+                </button>
+                <button id="btnApply2" type="submit" class="form-submit-button" data-component="button" data-content="">
+                    Apply
+                </button>
+            </ul>
+        </form>
+        <div id="footer">
+            Generated by <a href="http://www.phpform.org">pForm</a>
+        </div>
+    </div>
+    <img id="bottom" src="bottom.png" alt="">
+    </body>
 </div>
 
 <div id="Tokyo" class="tabcontent">

@@ -1,3 +1,29 @@
+let btnSave1
+let btnApply1
+let inputLastname
+let inputFirstname
+let inputBirthM
+let inputBirthD
+let inputBirthY
+let inputGender
+let inputHobby
+let inputSpecialty
+let inputArmy
+let inputArmyWhere
+let inputArmyPosition
+let inputArmyStart
+let inputArmyEnd
+let inputArmyDischarge
+let btnSave2
+let btnApply2
+let inputHighSchool
+let inputHighSchoolLoc
+let inputHighSchoolCategory
+let inputHighSchoolStart
+let inputHighSchoolEnd
+
+
+
 const func = () => {
     chrome.tabs.executeScript({file:"page1.js"})
 }
@@ -32,8 +58,8 @@ const save = () =>{
     chrome.storage.local.set({'armyDischarge':armyDischarge,'armyStart':armyStart,'armyEnd':armyEnd,'armyPosition':armyPosition,'army':army ,'armyWhere':armyWhere, 'lastName': lastName,'firstName':firstName,'birthday':birthday,'gender':gender,'hobby':hobby,'specialty':specialty}, function() {
 
     });
-    console.log('tabc on')
-    tabController('page1');
+    chrome.storage.local.set({'tab':0})
+
 }
 const save2=()=> {
 
@@ -46,9 +72,10 @@ const save2=()=> {
     const highSchoolStart = inputHighSchoolStart.value;
     const highSchoolEnd = inputHighSchoolEnd.value;
     chrome.storage.local.set({'highSchoolDay':highSchoolDay,'highSchoolStart':highSchoolStart,'highSchoolEnd':highSchoolEnd,'highSchoolDay':highSchoolDay,'highSchoolCategory':highSchoolCategory,'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
+    chrome.storage.local.set({'tab':1})
 }
 
-chrome.storage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+/*chrome.strage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
     document.getElementById('lastname').value=result.lastName;
     document.getElementById('firstname').value=result.firstName;
@@ -71,52 +98,136 @@ chrome.storage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','hig
     document.getElementById('armyStart').value=result.armyStart
     document.getElementById('armyEnd').value=result.armyEnd
     document.getElementById('armyDischarge').value=result.armyDischarge
-    /*document.getElementById('highSchool').value=result.highSchool
+    document.getElementById('highSchool').value=result.highSchool
     document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
 
 
     //document.getElementById('highSchoolGraduate').value=result.highSchoolGraduate
     document.getElementById('highSchoolCategory').value=result.highSchoolCategory
-    console.log(result.highSchoolStart);
+
     document.getElementById('highSchoolStart').value=result.highSchoolStart
     document.getElementById('highSchoolEnd').value=result.highSchoolEnd
-    document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;*/
+    document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;
 
 
+
+});*/
+
+const default1=()=> {
+     btnSave1 = document.getElementById('btnSave1');
+     btnApply1 = document.getElementById('btnApply1');
+
+     inputLastname = document.getElementById('lastname');
+     inputFirstname = document.getElementById('firstname');
+     inputBirthM = document.getElementById('birthday1');
+     inputBirthD = document.getElementById('birthday2');
+     inputBirthY = document.getElementById('birthday3');
+     inputGender = document.getElementById('gender');
+     inputHobby = document.getElementById('hobby');
+     inputSpecialty = document.getElementById('specialty');
+     inputArmy = document.getElementById('army');
+     inputArmyWhere = document.getElementById('armyWhere');
+     inputArmyPosition = document.getElementById('armyPosition');
+     inputArmyStart = document.getElementById('armyStart');
+     inputArmyEnd = document.getElementById('armyEnd');
+     inputArmyDischarge = document.getElementById('armyDischarge');
+    btnSave1.addEventListener("click",save);
+    btnApply1.addEventListener("click",func);
+    chrome.storage.local.get(['highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+
+        document.getElementById('lastname').value=result.lastName;
+        document.getElementById('firstname').value=result.firstName;
+        document.getElementById('birthday1').value=result.birthday.slice(4,6);
+        document.getElementById('birthday2').value=result.birthday.slice(6,8);
+        document.getElementById('birthday3').value=result.birthday.slice(0,4);
+
+        document.getElementById('hobby').value=result.hobby;
+        document.getElementById('specialty').value=result.specialty;
+        document.getElementById('army').value=result.army;
+        if(result.gender=="Male"){
+            document.getElementById('gender').value='Male'
+        }else{
+            document.getElementById('gender').value='Female'
+        }
+
+        document.getElementById('army').value='army'+(result.army+1).toString()
+        document.getElementById('armyWhere').value=result.armyWhere
+        document.getElementById('armyPosition').value=result.armyPosition
+        document.getElementById('armyStart').value=result.armyStart
+        document.getElementById('armyEnd').value=result.armyEnd
+        document.getElementById('armyDischarge').value=result.armyDischarge
+
+
+
+
+    });
+
+
+//let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
+};
+const default2=()=> {
+    console.log("d2")
+    btnSave2 = document.getElementById('btnSave2');
+     btnApply2 = document.getElementById('btnApply2');
+     inputHighSchool = document.getElementById('highSchool');
+     inputHighSchoolLoc = document.getElementById('highSchoolLoc');
+     inputHighSchoolCategory = document.getElementById('highSchoolCategory');
+     inputHighSchoolStart = document.getElementById('highSchoolStart');
+     inputHighSchoolEnd = document.getElementById('highSchoolEnd');
+    btnSave2.addEventListener("click",save2);
+    btnApply2.addEventListener("click",func2);
+
+    chrome.storage.local.get(['highSchoolLoc','highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+
+        document.getElementById('highSchool').value=result.highSchool
+        document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
+
+
+        //document.getElementById('highSchoolGraduate').value=result.highSchoolGraduate
+        document.getElementById('highSchoolCategory').value=result.highSchoolCategory
+
+        document.getElementById('highSchoolStart').value=result.highSchoolStart
+        document.getElementById('highSchoolEnd').value=result.highSchoolEnd
+        document.getElementById('highSchoolLoc').value=result.highSchoolLoc
+        document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;
+
+
+
+    });
+
+//let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
+};
+
+
+let pageArr = ['page1','page2','page3'];
+
+chrome.storage.local.get(['tab'],function(result){
+    for(let i=0;i<3;i++){
+        if(i==result.tab){
+        document.getElementById(pageArr[result.tab]).style.display = 'block'}
+        else{
+            document.getElementById(pageArr[i]).style.display = 'none'
+        }
+    }
 
 });
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-const btn3 = document.getElementById('btn3');
-const btn4 = document.getElementById('btn4');
-const inputLastname = document.getElementById('lastname');
-const inputFirstname = document.getElementById('firstname');
-const inputBirthM = document.getElementById('birthday1');
-const inputBirthD = document.getElementById('birthday2');
-const inputBirthY = document.getElementById('birthday3');
-const inputGender = document.getElementById('gender');
-const inputHobby = document.getElementById('hobby');
-const inputSpecialty = document.getElementById('specialty');
-const inputArmy = document.getElementById('army');
-const inputArmyWhere = document.getElementById('armyWhere');
-const inputArmyPosition = document.getElementById('armyPosition');
-const inputArmyStart = document.getElementById('armyStart');
-const inputArmyEnd = document.getElementById('armyEnd');
-const inputArmyDischarge = document.getElementById('armyDischarge');
-const inputHighSchool = document.getElementById('highSchool');
-const inputHighSchoolLoc = document.getElementById('highSchoolLoc');
-const inputHighSchoolCategory = document.getElementById('highSchoolCategory');
-const inputHighSchoolStart = document.getElementById('highSchoolStart');
-const inputHighSchoolEnd = document.getElementById('highSchoolEnd');
-//let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
 
 
 
-btn1.addEventListener("click",func);
-btn2.addEventListener("click",save);
+for(i=0;i<3;i++){
+    console.log(i)
+    if(document.getElementById(pageArr[i]).style.display=='block'){
+        if(pageArr[i]=='page1'){
+            default1()
+        }else if(pageArr[i]=='page2'){
+            default2()
+        }
+        break
+    }
+}
 
-//btn3.addEventListener("click",save2);
-//btn4.addEventListener("click",func2);
+
+
 
 
 

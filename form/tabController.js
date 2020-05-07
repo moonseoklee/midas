@@ -1,4 +1,4 @@
-function tabController( cityName) {
+function tabController(cityName) {
     var i, tabcontent, tablinks;
     console.log(cityName)
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -10,7 +10,7 @@ function tabController( cityName) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(cityName).style.display = "block";
-    console.log(evt)
+    default2()
     //evt.currentTarget.className += " active";
 }
 
