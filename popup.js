@@ -203,8 +203,12 @@ let pageArr = ['page1','page2','page3'];
 
 chrome.storage.local.get(['tab'],function(result){
     for(let i=0;i<3;i++){
-        if(i==result.tab){
-        document.getElementById(pageArr[result.tab]).style.display = 'block'}
+        if(i==result.tab) {
+            document.getElementById(pageArr[result.tab]).style.display = 'block'
+            if (result.tab == 1) {
+                default2()
+            }
+        }
         else{
             document.getElementById(pageArr[i]).style.display = 'none'
         }
