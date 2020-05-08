@@ -4,7 +4,8 @@ chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty',
 
         document.querySelector('#englishName').value=result.lastName+" "+result.firstName;
     }
-    document.querySelector('#birthday').value=result.birthday.slice(0,4)+"."+result.birthday.slice(4,6)+"."+result.birthday.slice(6,8);
+    if(document.querySelector('#birthday')!=null){
+    document.querySelector('#birthday').value=result.birthday.slice(0,4)+"."+result.birthday.slice(4,6)+"."+result.birthday.slice(6,8);}
     if(document.querySelectorAll('[name="hobby"]')[0]!=null){
     document.querySelectorAll('[name="hobby"]')[0].value=result.hobby;}
     if( document.querySelectorAll('[name="specialAbility"]')[0]!=null){
@@ -16,14 +17,18 @@ chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty',
             document.querySelectorAll('[name="genderFlag"]')[1].checked = true;
         }
     }
-    document.querySelectorAll('[name="military.militaryTypeCode"]')[result.army].checked=true;
+    if(document.querySelectorAll('[name="military.militaryTypeCode"]')[result.army]!=null){
+    document.querySelectorAll('[name="military.militaryTypeCode"]')[result.army].checked=true;}
     if(document.getElementById('militaryBranchCode')!=null){
     document.getElementById('militaryBranchCode').value=result.armyWhere;}
     if( document.querySelectorAll('[name="military.militaryPositionCode"]')[0]!=null){
     document.querySelectorAll('[name="military.militaryPositionCode"]')[0].value=result.armyPosition;}
-    document.querySelectorAll('[name="military.militaryStartDate"]')[0].value=result.armyStart.slice(0,4)+"."+result.armyStart.slice(4,6)+"."+result.armyStart.slice(6,8);
-    document.querySelectorAll('[name="military.militaryEndDate"]')[0].value=result.armyEnd.slice(0,4)+"."+result.armyEnd.slice(4,6)+"."+result.armyEnd.slice(6,8);
-    document.querySelectorAll('[name="military.militaryDischargeCode"]')[0].value=result.armyDischarge;
+    if( document.querySelectorAll('[name="military.militaryStartDate"]')[0]!=null){
+    document.querySelectorAll('[name="military.militaryStartDate"]')[0].value=result.armyStart.slice(0,4)+"."+result.armyStart.slice(4,6)+"."+result.armyStart.slice(6,8);}
+    if(document.querySelectorAll('[name="military.militaryEndDate"]')[0]!=null){
+    document.querySelectorAll('[name="military.militaryEndDate"]')[0].value=result.armyEnd.slice(0,4)+"."+result.armyEnd.slice(4,6)+"."+result.armyEnd.slice(6,8);}
+    if(document.querySelectorAll('[name="military.militaryDischargeCode"]')[0]!=null){
+    document.querySelectorAll('[name="military.militaryDischargeCode"]')[0].value=result.armyDischarge;}
 
 
 
