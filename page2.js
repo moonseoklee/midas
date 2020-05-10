@@ -6,7 +6,8 @@ chrome.storage.local.get(['highSchoolStart','highSchoolEnd','highSchoolDay','hig
     t.push(`<span>${highSchoolName}</span>`);
     t.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
 
-    $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
+    if($(document).find(`input[name$="highschool.academyName"]`)!=null){
+    $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));}
 
 
     if(document.querySelectorAll('[name="highschool.graduationTypeCode"]')[(result.highSchoolGraduate)]!=null){
