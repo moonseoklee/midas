@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4cfa5811-7111-4bdd-b061-8cba9a82bef4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page2.js" beforeDir="false" afterPath="$PROJECT_DIR$/page2.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,8 @@
       <workItem from="1588752140531" duration="3214000" />
       <workItem from="1588919231013" duration="3502000" />
       <workItem from="1589026539811" duration="1196000" />
-      <workItem from="1589122055175" duration="250000" />
+      <workItem from="1589122055175" duration="867000" />
+      <workItem from="1589192618737" duration="603000" />
     </task>
     <servers />
   </component>
@@ -118,9 +118,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1587887353109" />
-    <state x="652" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589122059704">
+    <state x="652" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1589192621719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="652" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589122059704" />
+    <state x="652" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589192621719" />
   </component>
 </project>
