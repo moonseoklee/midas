@@ -73,10 +73,8 @@
             </div>
             <ul >
 
-                <li class="section_break">
 
-                    <p></p>
-                </li>		<li id="li_1" >
+                <li id="li_1" >
                 <label class="description" for="gender">성별 </label>
                 <div>
                     <select class="element select small" id="gender" name="element_1">
@@ -258,19 +256,17 @@
         <form id="form_108925" class="appnitro"  method="post" action="">
             <div class="form_description">
                 <h2>학력 사항</h2>
-                <p></p>
+
             </div>
             <ul >
-
-                <li class="section_break">
-
-                    <p></p>
-                </li>		<li id="li_8" >
+                <h3>고등학교</h3>
+                <li id="li_8" >
                 <label class="description" for="highSchool">고등학교 이름 </label>
                 <div>
                     <input id="highSchool" name="element_8" class="element text medium" type="text" maxlength="255" value=""/>
                 </div>
-            </li>		<li id="li_11" >
+            </li>
+                <li id="li_11" >
                 <label class="description" for="element_11">졸업 여부 </label>
                 <span>
 			<input name="highSchoolGraduate" class="element radio" type="radio" value="0" />
@@ -323,12 +319,18 @@
 			<label for="armyEnd">YYYYMMDD</label>
 		</span>
 
-
-
-
-
             </li>
+                <li class="section_break">
 
+                    <p></p>
+                </li>
+                <h3>대학교</h3>
+
+                <label class="description" for="element_111">학위구분</label>
+                <input id="element_111_1" name="degreeType" class="element radio" type="radio" value="0" />
+                <label class="choice" for="element_14_1">전문학사</label>
+                <input id="element_111_2" name="degreeType" class="element radio" type="radio" value="1" />
+                <label class="choice" for="element_14_2">학사</label>
                 <button id="btnSave2" type="submit" class="form-submit-button" data-component="button" data-content="">
                     Save
                 </button>
