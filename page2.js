@@ -1,5 +1,5 @@
 
-chrome.storage.local.get(['highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
+chrome.storage.local.get(['univDegreeType','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
 
     let highSchoolName = result.highSchool;
     let t = []
@@ -24,4 +24,7 @@ chrome.storage.local.get(['highSchoolStart','highSchoolEnd','highSchoolDay','hig
     if(document.querySelectorAll('[name="highschool.graduationDate"]')[0]!=null){
     document.querySelectorAll('[name="highschool.graduationDate"]')[0].value=result.highSchoolEnd.slice(0,4)+"."+result.highSchoolEnd.slice(4,6);}
 
+
+    if(document.querySelectorAll('[name="univDegreeType"]')[(result.univDegreeType)]!=null){
+        document.querySelectorAll('[name="univDegreeType"]')[(result.univDegreeType)].checked=true;}
 });

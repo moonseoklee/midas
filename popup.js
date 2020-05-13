@@ -21,6 +21,8 @@ let inputHighSchoolLoc
 let inputHighSchoolCategory
 let inputHighSchoolStart
 let inputHighSchoolEnd
+let inputDegreeType
+let inputUniversity
 
 
 
@@ -71,7 +73,11 @@ const save2=()=> {
     const highSchoolDay = document.querySelector('[name = "highSchoolDay"]:checked').value;
     const highSchoolStart = inputHighSchoolStart.value;
     const highSchoolEnd = inputHighSchoolEnd.value;
-    chrome.storage.local.set({'highSchoolDay':highSchoolDay,'highSchoolStart':highSchoolStart,'highSchoolEnd':highSchoolEnd,'highSchoolDay':highSchoolDay,'highSchoolCategory':highSchoolCategory,'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
+    const univDegreeType = document.querySelector('[name = "univDegreeType"]:checked').value;
+    const university = inputUniversity;
+
+
+    chrome.storage.local.set({'university':university,'univDegreeType':univDegreeType,'highSchoolDay':highSchoolDay,'highSchoolStart':highSchoolStart,'highSchoolEnd':highSchoolEnd,'highSchoolDay':highSchoolDay,'highSchoolCategory':highSchoolCategory,'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
     chrome.storage.local.set({'tab':1})
 }
 
@@ -176,8 +182,8 @@ const default2=()=> {
      inputHighSchoolEnd = document.getElementById('highSchoolEnd');
     btnSave2.addEventListener("click",save2);
     btnApply2.addEventListener("click",func2);
-
-    chrome.storage.local.get(['highSchoolLoc','highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+    inputDegreeType = document.getElementById('univDegreeType')
+    chrome.storage.local.get(['univDegreeType','highSchoolLoc','highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
         document.getElementById('highSchool').value=result.highSchool
         document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
@@ -191,7 +197,7 @@ const default2=()=> {
         document.getElementById('highSchoolLoc').value=result.highSchoolLoc
         document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;
 
-
+        document.querySelectorAll('[name="univDegreeType"]')[result.univDegreeType].checked = true;
 
     });
 
