@@ -21,7 +21,6 @@ let inputHighSchoolLoc
 let inputHighSchoolCategory
 let inputHighSchoolStart
 let inputHighSchoolEnd
-let inputDegreeType
 let inputUniversity
 
 
@@ -29,7 +28,6 @@ let inputUniversity
 const func = () => {
     chrome.tabs.executeScript({file:"page1.js"})
 }
-
 
 const func2 = () => {
     chrome.tabs.executeScript({file: "jquery-min.js"}, function(){
@@ -74,7 +72,7 @@ const save2=()=> {
     const highSchoolStart = inputHighSchoolStart.value;
     const highSchoolEnd = inputHighSchoolEnd.value;
     const univDegreeType = document.querySelector('[name = "univDegreeType"]:checked').value;
-    const university = inputUniversity;
+    const university = inputUniversity.value;
 
 
     chrome.storage.local.set({'university':university,'univDegreeType':univDegreeType,'highSchoolDay':highSchoolDay,'highSchoolStart':highSchoolStart,'highSchoolEnd':highSchoolEnd,'highSchoolDay':highSchoolDay,'highSchoolCategory':highSchoolCategory,'highSchoolLoc' : highSchoolLoc, 'highSchool':highSchool,'highSchoolGraduate': highSchoolGraduate});
@@ -172,18 +170,25 @@ const default1=()=> {
 //let inputHighSchoolGraduate = document.querySelector('input[name = "highschool.graduationTypeCode"]:checked');
 };
 const default2=()=> {
-    console.log("d2")
-    btnSave2 = document.getElementById('btnSave2');
-     btnApply2 = document.getElementById('btnApply2');
+
+
+    //고등학교
      inputHighSchool = document.getElementById('highSchool');
      inputHighSchoolLoc = document.getElementById('highSchoolLoc');
      inputHighSchoolCategory = document.getElementById('highSchoolCategory');
      inputHighSchoolStart = document.getElementById('highSchoolStart');
      inputHighSchoolEnd = document.getElementById('highSchoolEnd');
+
+     //대학교
+    inputUniversity = document.getElementById('university');
+
+
+    btnSave2 = document.getElementById('btnSave2');
+    btnApply2 = document.getElementById('btnApply2');
     btnSave2.addEventListener("click",save2);
     btnApply2.addEventListener("click",func2);
-    inputDegreeType = document.getElementById('univDegreeType')
-    chrome.storage.local.get(['univDegreeType','highSchoolLoc','highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
+
+    chrome.storage.local.get(['university','univDegreeType','highSchoolLoc','highSchoolDay','highSchoolStart','highSchoolEnd','highSchoolCategory','highSchool','highSchoolGraduate','armyPosition','armyDischarge','armyStart','armyEnd','lastName','firstName','birthday','hobby','specialty','gender','army','armyWhere'], function(result) {
 
         document.getElementById('highSchool').value=result.highSchool
         document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
@@ -198,6 +203,7 @@ const default2=()=> {
         document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;
 
         document.querySelectorAll('[name="univDegreeType"]')[result.univDegreeType].checked = true;
+        document.getElementById('university').value=result.university
 
     });
 
@@ -205,36 +211,7 @@ const default2=()=> {
 };
 
 
-let pageArr = ['page1','page2','page3'];
 
-chrome.storage.local.get(['tab'],function(result){
-    for(let i=0;i<3;i++){
-        if(i==result.tab) {
-            document.getElementById(pageArr[result.tab]).style.display = 'block'
-            if (result.tab == 1) {
-                default2()
-            }
-        }
-        else{
-            document.getElementById(pageArr[i]).style.display = 'none'
-        }
-    }
-
-});
-
-
-
-for(i=0;i<3;i++){
-    console.log(i)
-    if(document.getElementById(pageArr[i]).style.display=='block'){
-        if(pageArr[i]=='page1'){
-            default1()
-        }else if(pageArr[i]=='page2'){
-            default2()
-        }
-        break
-    }
-}
 
 
 

@@ -1,14 +1,19 @@
-
-chrome.storage.local.get(['univDegreeType','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
+chrome.storage.local.get(['university','univDegreeType','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
 
     let highSchoolName = result.highSchool;
+    let universityName = result.university;
     let t = []
+    let t2 = []
     t.push(`<span>${highSchoolName}</span>`);
     t.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
 
-    if($(document).find(`input[name$="highschool.academyName"]`)!=null){
-    $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));}
+    t2.push(`<span>${universityName}</span>`);
+    t2.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
 
+    if($(document).find(`input[name$="highschool.academyName"]`)!=null){
+    $(document).find(`input[name$="highschool.academyName"]`).val(universityName).next('span.searchResultName').html(t.join(''));}
+    if($(document).find(`input[name$="college[0].academyName"]`)!=null){
+        $(document).find(`input[name$="college[0].academyName"]`).val(universityName).next('span.searchResultName').html(t2.join(''));}
 
     if(document.querySelectorAll('[name="highschool.graduationTypeCode"]')[(result.highSchoolGraduate)]!=null){
     document.querySelectorAll('[name="highschool.graduationTypeCode"]')[(result.highSchoolGraduate)].checked=true;}

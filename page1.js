@@ -1,3 +1,4 @@
+
 chrome.storage.local.get(['firstName','lastName','birthday','hobby','specialty','gender','army','armyWhere','armyPosition','armyStart','armyEnd','armyDischarge'], function(result) {
 
     if(document.querySelector('#englishName')!=null){

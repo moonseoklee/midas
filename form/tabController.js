@@ -1,6 +1,10 @@
 function tabController(cityName) {
     var i, tabcontent, tablinks;
-    console.log(cityName)
+    if(cityName=='page1'){
+        default1()
+    }else{
+        default2()
+    }
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -10,7 +14,7 @@ function tabController(cityName) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
     document.getElementById(cityName).style.display = "block";
-    default2()
+
     //evt.currentTarget.className += " active";
 }
 
