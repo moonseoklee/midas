@@ -23,6 +23,8 @@ let inputHighSchoolStart
 let inputHighSchoolEnd
 let inputUniversity
 let inputUniversityLoc
+let inputUniversityStart
+let inputUniversityEnd
 
 
 const func = () => {
@@ -83,16 +85,24 @@ const save2 = () => {
     const highSchoolDay = document.querySelector('[name = "highSchoolDay"]:checked').value;
     const highSchoolStart = inputHighSchoolStart.value;
     const highSchoolEnd = inputHighSchoolEnd.value;
+
+
     const univDegreeType = document.querySelector('[name = "univDegreeType"]:checked').value;
     const university = inputUniversity.value;
     const universityLoc = inputUniversityLoc.value;
     const universityHeadOrBranch = document.querySelector('[name = "universityHeadOrBranch"]:checked').value;
+    const universityStart = inputUniversityStart.value;
+    const universityEnd = inputUniversityEnd.value;
+    const universityEntranceType = document.querySelector('[name = "universityEntranceType"]:checked').value;
 
     chrome.storage.local.set({
         'university': university,
         'universityLoc': universityLoc,
         'univDegreeType': univDegreeType,
         'universityHeadOrBranch':universityHeadOrBranch,
+        'universityStart':universityStart,
+        'universityEnd':universityEnd,
+        'universityEntranceType':universityEntranceType,
 
         'highSchoolDay': highSchoolDay,
         'highSchoolStart': highSchoolStart,
@@ -207,13 +217,15 @@ const default2 = () => {
     //대학교
     inputUniversity = document.getElementById('university');
     inputUniversityLoc = document.getElementById('universityLoc');
+    inputUniversityStart = document.getElementById('universityStart')
+    inputUniversityEnd= document.getElementById('universityEnd')
 
     btnSave2 = document.getElementById('btnSave2');
     btnApply2 = document.getElementById('btnApply2');
     btnSave2.addEventListener("click", save2);
     btnApply2.addEventListener("click", func2);
 
-    chrome.storage.local.get(['universityHeadOrBranch','universityLoc','university', 'univDegreeType', 'highSchoolLoc', 'highSchoolDay', 'highSchoolStart', 'highSchoolEnd', 'highSchoolCategory', 'highSchool', 'highSchoolGraduate', 'armyPosition', 'armyDischarge', 'armyStart', 'armyEnd', 'lastName', 'firstName', 'birthday', 'hobby', 'specialty', 'gender', 'army', 'armyWhere'], function (result) {
+    chrome.storage.local.get(['universityEntranceType','universityStart','universityEnd','universityHeadOrBranch','universityLoc','university', 'univDegreeType', 'highSchoolLoc', 'highSchoolDay', 'highSchoolStart', 'highSchoolEnd', 'highSchoolCategory', 'highSchool', 'highSchoolGraduate', 'armyPosition', 'armyDischarge', 'armyStart', 'armyEnd', 'lastName', 'firstName', 'birthday', 'hobby', 'specialty', 'gender', 'army', 'armyWhere'], function (result) {
 
         document.getElementById('highSchool').value = result.highSchool
         document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
@@ -229,6 +241,9 @@ const default2 = () => {
         document.getElementById('university').value = result.university
         document.getElementById('universityLoc').value = result.universityLoc
         document.querySelectorAll('[name="universityHeadOrBranch"]')[result.universityHeadOrBranch].checked = true;
+        document.querySelectorAll('[name="universityEntranceType"]')[result.universityEntranceType].checked = true;
+        document.getElementById('universityStart').value = result.universityStart
+        document.getElementById('universityEnd').value = result.universityEnd
 
     });
 

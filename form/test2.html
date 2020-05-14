@@ -61,28 +61,35 @@
         }
 
         .radio input[type="radio"] + span.label {
-            display: block;
+
             position: relative;
             box-sizing: border-box;
-            padding: 0px 15px;
-            min-width: 75px;
+            padding: 0px 0px;
+            /* min-width: 75px; */
             width: calc(100% + 1px);
-            height: 40px;
-            line-height: 38px;
+            height: 30px;
+            line-height: 30px;
             border: 1px solid #e1e1e1;
-            font-size: 14px;
+            font-size: 11px;
             text-align: center;
             transition: all 0.2s ease;
+            margin:0 0 0 10px;
 
         }
-        .radio>label {
+
+        .radio > label {
             position: relative;
             float: left;
             /* display: block; */
             cursor: pointer;
         }
-        label {
-            white-space:nowrap;
+
+        div.row.in-span {
+            margin-left: -10px;
+        }
+
+        div.row.no-margin {
+            margin-top: 0px;
         }
 
 
@@ -318,21 +325,41 @@
                                value=""/>
                     </div>
                 </li>
-                <li id="li_11">
-                    <label class="description" for="element_11">졸업 여부 </label>
-                    <span>
-			<input name="highSchoolGraduate" class="element radio" type="radio" value="0"/>
-        <label class="choice" for="element_11_1">졸업</label>
-                     <input name="highSchoolGraduate" class="element radio" type="radio" value="1"/>
-        <label class="choice" for="element_11_2">졸업예정</label>
-          <input name="highSchoolGraduate" class="element radio" type="radio" value="2"/>
-        <label class="choice" for="element_11_3">중퇴</label>
-                    <input name="highSchoolGraduate" class="element radio" type="radio" value="3"/>
-        <label class="choice" for="element_11_4">휴학</label>
-                    <input name="highSchoolGraduate" class="element radio" type="radio" value="4"/>
-        <label class="choice" for="element_11_5">재학</label>
 
-		</span>
+                <li id="li_8">
+                    <label class="description" for="element_14_1">졸업 여부</label>
+                    <div class="row in-span no-margin">
+
+                        <div class="span per100 radio" data-rel-id="">
+
+                            <label>
+                                <input type="radio" name="highSchoolGraduate" value="0" checked="" required=""
+                                       style="display: none">
+                                <span class="label">졸업</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="highSchoolGraduate" value="1" checked="" required=""
+                                       style="display: none">
+                                <span class="label">졸업예정</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="highSchoolGraduate" value="2" checked="" required=""
+                                       style="display: none">
+                                <span class="label">중퇴</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="highSchoolGraduate" value="3" checked="" required=""
+                                       style="display: none">
+                                <span class="label">휴학</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="highSchoolGraduate" value="4" checked="" required=""
+                                       style="display: none">
+                                <span class="label">재학</span>
+                            </label>
+
+                        </div>
+                    </div>
                 </li>
                 <li id="li_12">
                     <label class="description" for="element_12">학교소재지 </label>
@@ -410,15 +437,27 @@
                         </select>
                     </div>
                 </li>
-                <li id="li_14">
-                    <label class="description" for="element_14"> </label>
-                    <span>
-			        <input id="element_14_1" name="highSchoolDay" class="element radio" type="radio" value="0"/>
-                <label class="choice" for="element_14_1">주간</label>
-                    <input id="element_14_2" name="highSchoolDay" class="element radio" type="radio" value="1"/>
-                <label class="choice" for="element_14_2">야간</label>
 
-		        </span>
+                <li id="li_8">
+                    <label class="description" for="university">학위구분</label>
+                    <nobr></nobr>
+                    <div class="row in-span no-margin">
+
+                        <div class="span per100 radio" data-rel-id="">
+
+                            <label>
+                                <input type="radio" name="highSchoolDay" value="0" checked="" required=""
+                                       style="display: none">
+                                <span class="label">주간</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="highSchoolDay" value="1" checked="" required=""
+                                       style="display: none">
+                                <span class="label">야간</span>
+                            </label>
+
+                        </div>
+                    </div>
                 </li>
                 <li id="li_8">
                     <label class="description" for="armyStart">입학</label>
@@ -444,25 +483,32 @@
                     <p></p>
                 </li>
                 <h3>대학교</h3>
-                <li>
-                <div class="row in-span no-margin">
-                    <div class="span per100 radio" data-rel-id="">
-                        <label>
-                            <input type="radio" name="univDegreeType" value="0" checked="" required="" style="visibility: hidden">
-                            <span class="label">전문학사</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="univDegreeType" value="1" checked="" required="" style="visibility: hidden">
-                            <span class="label">학사</span>
-                        </label>
-                    </label>
+                <li id="li_8">
+                    <label class="description" for="university">학위구분</label>
+                    <nobr></nobr>
+                    <div class="row in-span no-margin">
+
+                        <div class="span per100 radio" data-rel-id="">
+
+                            <label>
+                                <input type="radio" name="univDegreeType" value="0" checked="" required=""
+                                       style="display: none">
+                                <span class="label">전문학사</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="univDegreeType" value="1" checked="" required=""
+                                       style="display: none">
+                                <span class="label">학사</span>
+                            </label>
+
+                        </div>
                     </div>
-                </div>
                 </li>
                 <li id="li_8">
                     <label class="description" for="highSchool">대학교 이름 </label>
                     <div>
-                        <input id="university" name="element_8" class="element text medium" type="text" maxlength="255"    value=""/>
+                        <input id="university" name="element_8" class="element text medium" type="text" maxlength="255"
+                               value=""/>
                     </div>
                 </li>
                 <li id="li_12">
@@ -520,17 +566,28 @@
                         </label>
                     </div>
                 </li>
-                <li id="li_14">
-                    <label class="description" for="element_14"> </label>
-                    <span>
-			        <input id="element_14_1" name="universityHeadOrBranch" class="element radio" type="radio"
-                           value="0"/>
-                <label class="choice" for="element_14_1">본교</label>
-                    <input id="element_14_2" name="universityHeadOrBranch" class="element radio" type="radio"
-                           value="1"/>
-                <label class="choice" for="element_14_2">분교</label>
 
-		        </span>
+                <li id="li_8">
+                    <label class="description" for="university">본교/분교</label>
+                    <nobr></nobr>
+                    <div class="row in-span no-margin">
+
+                        <div class="span per100 radio" data-rel-id="">
+
+                            <label>
+
+                                <input type="radio" name="universityHeadOrBranch" value="0" checked="" required=""
+                                       style="display: none">
+                                <span class="label">본교</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="universityHeadOrBranch" value="1" checked="" required=""
+                                       style="display: none">
+                                <span class="label">분교</span>
+                            </label>
+
+                        </div>
+                    </div>
                 </li>
                 <li id="li_8">
                     <label class="description" for="armyStart">입학</label>
@@ -551,17 +608,27 @@
 		</span>
 
                 </li>
-                <li id="li_14">
-                    <label class="description" for="element_14"> </label>
-                    <span>
-			        <input id="element_14_1" name="universityEntranceType" class="element radio" type="radio"
-                           value="0"/>
-                <label class="choice" for="element_14_1">입학</label>
-                    <input id="element_14_2" name="universityEntranceType" class="element radio" type="radio"
-                           value="1"/>
-                <label class="choice" for="element_14_2">편입</label>
 
-		        </span>
+                <li id="li_8">
+                    <label class="description" for="university">입학구분</label>
+                    <nobr></nobr>
+                    <div class="row in-span no-margin">
+
+                        <div class="span per100 radio" data-rel-id="">
+
+                            <label>
+                                <input type="radio" name="universityEntranceType" value="0" checked="" required=""
+                                       style="display: none">
+                                <span class="label">입학</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="universityEntranceType" value="1" checked="" required=""
+                                       style="display: none">
+                                <span class="label">편입</span>
+                            </label>
+
+                        </div>
+                    </div>
                 </li>
             </ul>
         </form>
