@@ -1,4 +1,4 @@
-chrome.storage.local.get(['university','univDegreeType','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
+chrome.storage.local.get(['universityLoc','universityHeadOrBranch','university','univDegreeType','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
 
     let highSchoolName = result.highSchool;
     let universityName = result.university;
@@ -30,6 +30,11 @@ chrome.storage.local.get(['university','univDegreeType','highSchoolStart','highS
     document.querySelectorAll('[name="highschool.graduationDate"]')[0].value=result.highSchoolEnd.slice(0,4)+"."+result.highSchoolEnd.slice(4,6);}
 
 
-    if(document.querySelectorAll('[name="univDegreeType"]')[(result.univDegreeType)]!=null){
-        document.querySelectorAll('[name="univDegreeType"]')[(result.univDegreeType)].checked=true;}
+
+    if(document.querySelectorAll('[name="college[0].degreeTypeCode"]')[(result.univDegreeType)]!=null){
+        document.querySelectorAll('[name="college[0].degreeTypeCode"]')[(result.univDegreeType)].checked=true;}
+    if(document.querySelectorAll('[name="college[0].locationCode"]')[0]!=null){
+        document.querySelectorAll('[name="college[0].locationCode"]')[0].value = result.universityLoc;}
+    if(document.querySelectorAll('[name="college[0].headOrBranch"]')[result.universityHeadOrBranch]!=null){
+        document.querySelectorAll('[name="college[0].headOrBranch"]')[result.universityHeadOrBranch].checked=true;}
 });
