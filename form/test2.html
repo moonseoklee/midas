@@ -320,9 +320,17 @@
                 <h3>고등학교</h3>
                 <li id="li_8">
                     <label class="description" for="highSchool">고등학교 이름 </label>
+
                     <div>
-                        <input id="highSchool" name="element_8" class="element text medium" type="text" maxlength="255"
-                               value=""/>
+                        <form>
+                            <input id="searchedHighSchool" name="element_8" class="element text medium" type="text" maxlength="255" value=""/>
+                        </form>
+                            <button id="searchHighSchool" type="button" class="form-submit-button" data-component="button" data-content="">
+                                검색
+                            </button>
+                        <ul id="searchedHighSchools">
+                            <li id="result"></li>
+                        </ul>
                     </div>
                 </li>
 
