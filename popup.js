@@ -25,7 +25,7 @@ let inputUniversity
 let inputUniversityLoc
 let inputUniversityStart
 let inputUniversityEnd
-
+let btnSearchHighSchool
 
 const func = () => {
     chrome.tabs.executeScript({file: "page1.js"})
@@ -220,6 +220,9 @@ const default2 = () => {
     inputUniversityStart = document.getElementById('universityStart')
     inputUniversityEnd= document.getElementById('universityEnd')
 
+    btnSearchHighSchool = document.getElementById('searchHighSchool');
+    btnSearchHighSchool.addEventListener("click",searchHighSchool);
+
     btnSave2 = document.getElementById('btnSave2');
     btnApply2 = document.getElementById('btnApply2');
     btnSave2.addEventListener("click", save2);
@@ -227,7 +230,7 @@ const default2 = () => {
 
     chrome.storage.local.get(['universityEntranceType','universityStart','universityEnd','universityHeadOrBranch','universityLoc','university', 'univDegreeType', 'highSchoolLoc', 'highSchoolDay', 'highSchoolStart', 'highSchoolEnd', 'highSchoolCategory', 'highSchool', 'highSchoolGraduate', 'armyPosition', 'armyDischarge', 'armyStart', 'armyEnd', 'lastName', 'firstName', 'birthday', 'hobby', 'specialty', 'gender', 'army', 'armyWhere'], function (result) {
 
-        document.getElementById('highSchool').value = result.highSchool
+        //document.getElementById('highSchool').value = result.highSchool
         document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
         //document.getElementById('highSchoolGraduate').value=result.highSchoolGraduate
         document.getElementById('highSchoolCategory').value = result.highSchoolCategory
@@ -252,7 +255,20 @@ const default2 = () => {
 
 
 
-
+const searchHighSchool = () => {
+    let searchedHighSchool = document.getElementById('searchedHighSchool').value;
+    let param = {};
+    param.highschoolName = searchedHighSchool;
+    $.ajax({
+        type: 'post', dataType: 'json',
+        url: 'https://prudential.recruiter.co.kr/com/code/retrieveHighschoolList',
+        data: param,
+        async : false
+    })
+        .done(function(x,e){
+            console.log(x);
+        })
+}
 
 
 
