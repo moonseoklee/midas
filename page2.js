@@ -1,20 +1,28 @@
-chrome.storage.local.get(['universityEntranceType','universityStart','universityEnd','universityLoc','universityHeadOrBranch','university','univDegreeType','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
+chrome.storage.local.get(['universityCode','universityEntranceType','universityStart','universityEnd','universityLoc','universityHeadOrBranch','university','univDegreeType','highSchoolCode','highSchoolStart','highSchoolEnd','highSchoolDay','highSchoolCategory','highSchool','highSchoolGraduate','highSchoolLoc'], function(result) {
 
     let highSchoolName = result.highSchool;
+    let highSchoolCode = result.highSchoolCode;
+
     let universityName = result.university;
+
     let t = []
     let t2 = []
 
     t.push(`<span>${highSchoolName}</span>`);
     t.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
 
-    t2.push(`<span>${universityName}</span>`);
+    t2.push(`<span>${highSchoolCode}</span>`);
     t2.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
     //////////////////////// html에 가시되지만 제대로 작동하지 않는다.
     if($(document).find(`input[name$="highschool.academyName"]`)!=null){
-    $(document).find(`input[name$="highschool.academyName"]`).val(universityName).next('span.searchResultName').html(t.join(''));}
+    $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
+        $(document).find(`input[name$="highschool.academyCode"]`).val(highSchoolCode).focus();
+    }
     if($(document).find(`input[name$="college[0].academyName"]`)!=null){
         $(document).find(`input[name$="college[0].academyName"]`).val(universityName).next('span.searchResultName').html(t2.join(''));}
+
+
+
 
     //고등학교
     if(document.querySelectorAll('[name="highschool.graduationTypeCode"]')[(result.highSchoolGraduate)]!=null){

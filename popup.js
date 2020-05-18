@@ -26,6 +26,7 @@ let inputUniversityLoc
 let inputUniversityStart
 let inputUniversityEnd
 let btnSearchHighSchool
+let inputHighSchoolCode;
 
 const func = () => {
     chrome.tabs.executeScript({file: "page1.js"})
@@ -85,7 +86,7 @@ const save2 = () => {
     const highSchoolDay = document.querySelector('[name = "highSchoolDay"]:checked').value;
     const highSchoolStart = inputHighSchoolStart.value;
     const highSchoolEnd = inputHighSchoolEnd.value;
-
+    const highSchoolCode = inputHighSchoolCode;
 
     const univDegreeType = document.querySelector('[name = "univDegreeType"]:checked').value;
     const university = inputUniversity.value;
@@ -104,6 +105,7 @@ const save2 = () => {
         'universityEnd':universityEnd,
         'universityEntranceType':universityEntranceType,
 
+        'highSchoolCode' : highSchoolCode,
         'highSchoolDay': highSchoolDay,
         'highSchoolStart': highSchoolStart,
         'highSchoolEnd': highSchoolEnd,
@@ -208,7 +210,7 @@ const default2 = () => {
 
 
     //고등학교
-    inputHighSchool = document.getElementById('highSchool');
+    //inputHighSchool = document.getElementById('searchedHighSchool');
     inputHighSchoolLoc = document.getElementById('highSchoolLoc');
     inputHighSchoolCategory = document.getElementById('highSchoolCategory');
     inputHighSchoolStart = document.getElementById('highSchoolStart');
@@ -228,9 +230,9 @@ const default2 = () => {
     btnSave2.addEventListener("click", save2);
     btnApply2.addEventListener("click", func2);
 
-    chrome.storage.local.get(['universityEntranceType','universityStart','universityEnd','universityHeadOrBranch','universityLoc','university', 'univDegreeType', 'highSchoolLoc', 'highSchoolDay', 'highSchoolStart', 'highSchoolEnd', 'highSchoolCategory', 'highSchool', 'highSchoolGraduate', 'armyPosition', 'armyDischarge', 'armyStart', 'armyEnd', 'lastName', 'firstName', 'birthday', 'hobby', 'specialty', 'gender', 'army', 'armyWhere'], function (result) {
+    chrome.storage.local.get(['universityEntranceType','universityStart','universityEnd','universityHeadOrBranch','universityLoc','university', 'univDegreeType', 'highSchoolCode','highSchoolLoc', 'highSchoolDay', 'highSchoolStart', 'highSchoolEnd', 'highSchoolCategory', 'highSchool', 'highSchoolGraduate', 'armyPosition', 'armyDischarge', 'armyStart', 'armyEnd', 'lastName', 'firstName', 'birthday', 'hobby', 'specialty', 'gender', 'army', 'armyWhere'], function (result) {
 
-        //document.getElementById('highSchool').value = result.highSchool
+        document.getElementById('searchedHighSchool').value = result.highSchool
         document.querySelectorAll('[name="highSchoolGraduate"]')[result.highSchoolGraduate].checked = true;
         //document.getElementById('highSchoolGraduate').value=result.highSchoolGraduate
         document.getElementById('highSchoolCategory').value = result.highSchoolCategory
@@ -269,15 +271,24 @@ const searchHighSchool = () => {
     })
         .done(function(x,e){
             for(let i=0; i<x.length; i++) {
-                //name 과 code외에 따로 넘겨야할 값들 (data-attribute형식)
 
 
                 markName = x[i]['highschoolName'].replace(searchedHighSchool, `<strong>${searchedHighSchool}</strong>`);
-                t.push(`<li><button type="button" class="ellipsis" data-code="${x[i]['highschoolCode']}" title="${x[i]['highschoolName']}" >${markName}</button></li>`);
+                t.push(`<li><button id = i type="button" class="ellipsis" data-code="${x[i]['highschoolCode']}" title="${x[i]['highschoolName']}" >${markName}</button></li>`);
             }
 
             $('#searchedHighSchools').html(`<ul class="searchResultList">${t.join('')}</ul>`);
-        })
+        });
+
+    $(":button").click(function(){
+            //       console.log($(this).attr('data-code'))
+        document.getElementById('searchedHighSchool').value = $(this).attr('title');
+        inputHighSchoolCode = $(this).attr('data-code');
+        $('#searchedHighSchools').html('');
+        }
+    )
+
+
 }
 
 
