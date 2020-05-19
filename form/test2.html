@@ -512,11 +512,20 @@
                         </div>
                     </div>
                 </li>
+                <h3>고등학교</h3>
                 <li id="li_8">
-                    <label class="description" for="highSchool">대학교 이름 </label>
+                    <label class="description" for="university">대학교 이름 </label>
+
                     <div>
-                        <input id="university" name="element_8" class="element text medium" type="text" maxlength="255"
-                               value=""/>
+                        <form>
+                            <input id="searchedUniversity" name="element_8" class="element text medium" type="text" maxlength="255" value=""/>
+                        </form>
+                        <button id="searchUniversity" type="button" class="form-submit-button" data-component="button" data-content="">
+                            검색
+                        </button>
+                        <ul id="searchedUniversities">
+                            <li id="result2"></li>
+                        </ul>
                     </div>
                 </li>
                 <li id="li_12">

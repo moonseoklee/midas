@@ -12,7 +12,7 @@ chrome.storage.local.get(['universityCode','universityEntranceType','universityS
     t.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
 
     t2.push(`<span>${highSchoolCode}</span>`);
-    t2.push('<button type="button" class="resetSearchResult" data-button="resetSearchResult"></button>');
+    t2.push('<button type="button" class="resetSearchResult" data-button="resetSez`archResult"></button>');
     //////////////////////// html에 가시되지만 제대로 작동하지 않는다.
     if($(document).find(`input[name$="highschool.academyName"]`)!=null){
     $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));

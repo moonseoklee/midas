@@ -21,12 +21,15 @@ let inputHighSchoolLoc
 let inputHighSchoolCategory
 let inputHighSchoolStart
 let inputHighSchoolEnd
-let inputUniversity
+
 let inputUniversityLoc
 let inputUniversityStart
 let inputUniversityEnd
 let btnSearchHighSchool
 let inputHighSchoolCode;
+let inputUniversity;
+let inputUniversityCode;
+let btnSearchUniversity
 
 const func = () => {
     chrome.tabs.executeScript({file: "page1.js"})
@@ -77,7 +80,7 @@ const save = () => {
 
 }
 const save2 = () => {
-    console.log(inputHighSchool.value)
+
     const highSchool = inputHighSchool;
 
     const highSchoolGraduate = document.querySelector('[name = "highSchoolGraduate"]:checked').value;
@@ -89,13 +92,13 @@ const save2 = () => {
     const highSchoolCode = inputHighSchoolCode;
 
     const univDegreeType = document.querySelector('[name = "univDegreeType"]:checked').value;
-    const university = inputUniversity.value;
+    const university = inputUniversity;
     const universityLoc = inputUniversityLoc.value;
     const universityHeadOrBranch = document.querySelector('[name = "universityHeadOrBranch"]:checked').value;
     const universityStart = inputUniversityStart.value;
     const universityEnd = inputUniversityEnd.value;
     const universityEntranceType = document.querySelector('[name = "universityEntranceType"]:checked').value;
-
+    const universityCode = inputUniversityCode;
     chrome.storage.local.set({
         'university': university,
         'universityLoc': universityLoc,
@@ -104,6 +107,7 @@ const save2 = () => {
         'universityStart':universityStart,
         'universityEnd':universityEnd,
         'universityEntranceType':universityEntranceType,
+        'universityCode':universityCode,
 
         'highSchoolCode' : highSchoolCode,
         'highSchoolDay': highSchoolDay,
@@ -225,6 +229,9 @@ const default2 = () => {
     btnSearchHighSchool = document.getElementById('searchHighSchool');
     btnSearchHighSchool.addEventListener("click",searchHighSchool);
 
+    btnSearchUniversity = document.getElementById('searchUniversity');
+    btnSearchUniversity.addEventListener("click",searchUniversity);
+
     btnSave2 = document.getElementById('btnSave2');
     btnApply2 = document.getElementById('btnApply2');
     btnSave2.addEventListener("click", save2);
@@ -243,7 +250,7 @@ const default2 = () => {
 
 
         document.querySelectorAll('[name="univDegreeType"]')[result.univDegreeType].checked = true;
-        document.getElementById('university').value = result.university
+        document.getElementById('searchedUniversity').value = result.university
         document.getElementById('universityLoc').value = result.universityLoc
         document.querySelectorAll('[name="universityHeadOrBranch"]')[result.universityHeadOrBranch].checked = true;
         document.querySelectorAll('[name="universityEntranceType"]')[result.universityEntranceType].checked = true;
@@ -258,10 +265,10 @@ const default2 = () => {
 
 
 const searchHighSchool = () => {
-    let searchedHighSchool = document.getElementById('searchedHighSchool').value;
-    let markName;
-    let param = {};
-    let t=[];
+    var searchedHighSchool = document.getElementById('searchedHighSchool').value;
+    var markName;
+    var param = {};
+    var t=[];
     param.highschoolName = searchedHighSchool;
     $.ajax({
         type: 'post', dataType: 'json',
@@ -287,6 +294,42 @@ const searchHighSchool = () => {
         inputHighSchool = $(this).attr('title');
         $('#searchedHighSchools').html('');
         $(".searchBtn1").off('click');
+        }
+    )
+
+
+}
+
+const searchUniversity = () => {
+    var searchedUniversity = document.getElementById('searchedUniversity').value;
+    var markName;
+    var param = {};
+    var t=[];
+    param.universityName = searchedUniversity;
+    $.ajax({
+        type: 'post', dataType: 'json',
+        url: 'https://prudential.recruiter.co.kr/com/code/retrieveCollegeList',
+        data: param,
+        async : false
+    })
+        .done(function(x,e){
+            for(let i=0; i<x.length; i++) {
+
+
+                markName = x[i]['collegeName'].replace(searchedUniversity, `<strong>${searchedUniversity}</strong>`);
+                t.push(`<li><button id = i type="button" class="searchBtn2" data-code="${x[i]['collegeCode']}" title="${x[i]['collegeName']}" >${markName}</button></li>`);
+            }
+
+            $('#searchedUniversities').html(`<ul class="searchResultList">${t.join('')}</ul>`);
+        });
+
+    $(".searchBtn2").click(function(){
+            console.log('btn clicked');
+            document.getElementById('searchedUniversity').value = $(this).attr('title');
+            inputUniversityCode = $(this).attr('data-code');
+            inputUniversity = $(this).attr('title');
+            $('#searchedUniversities').html('');
+            $(".searchBtn2").off('click');
         }
     )
 
