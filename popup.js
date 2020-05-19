@@ -100,7 +100,7 @@ const save2 = () => {
     const universityEntranceType = document.querySelector('[name = "universityEntranceType"]:checked').value;
     const universityCode = inputUniversityCode;
     chrome.storage.local.set({
-        'university': university,
+
         'universityLoc': universityLoc,
         'univDegreeType': univDegreeType,
         'universityHeadOrBranch':universityHeadOrBranch,
@@ -116,7 +116,7 @@ const save2 = () => {
         'highSchoolDay': highSchoolDay,
         'highSchoolCategory': highSchoolCategory,
         'highSchoolLoc': highSchoolLoc,
-        'highSchool': highSchool,
+
         'highSchoolGraduate': highSchoolGraduate
     });
     chrome.storage.local.set({'tab': 1})
@@ -247,10 +247,9 @@ const default2 = () => {
         document.getElementById('highSchoolEnd').value = result.highSchoolEnd
         document.getElementById('highSchoolLoc').value = result.highSchoolLoc
         document.querySelectorAll('[name="highSchoolDay"]')[result.highSchoolDay].checked = true;
-
-
+        console.log(result)
+        document.getElementById('searchedUniversity').value = result.university;
         document.querySelectorAll('[name="univDegreeType"]')[result.univDegreeType].checked = true;
-        document.getElementById('searchedUniversity').value = result.university
         document.getElementById('universityLoc').value = result.universityLoc
         document.querySelectorAll('[name="universityHeadOrBranch"]')[result.universityHeadOrBranch].checked = true;
         document.querySelectorAll('[name="universityEntranceType"]')[result.universityEntranceType].checked = true;
@@ -294,6 +293,9 @@ const searchHighSchool = () => {
         inputHighSchool = $(this).attr('title');
         $('#searchedHighSchools').html('');
         $(".searchBtn1").off('click');
+        chrome.storage.local.set({
+            'highSchool' : inputHighSchool
+        });
         }
     )
 
@@ -330,6 +332,9 @@ const searchUniversity = () => {
             inputUniversity = $(this).attr('title');
             $('#searchedUniversities').html('');
             $(".searchBtn2").off('click');
+            chrome.storage.local.set({
+                'university' : inputUniversity
+            });
         }
     )
 
