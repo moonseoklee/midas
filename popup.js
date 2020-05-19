@@ -77,8 +77,8 @@ const save = () => {
 
 }
 const save2 = () => {
-
-    const highSchool = inputHighSchool.value;
+    console.log(inputHighSchool.value)
+    const highSchool = inputHighSchool;
 
     const highSchoolGraduate = document.querySelector('[name = "highSchoolGraduate"]:checked').value;
     const highSchoolLoc = inputHighSchoolLoc.value;
@@ -210,7 +210,7 @@ const default2 = () => {
 
 
     //고등학교
-    //inputHighSchool = document.getElementById('searchedHighSchool');
+    inputHighSchool = document.getElementById('searchedHighSchool');
     inputHighSchoolLoc = document.getElementById('highSchoolLoc');
     inputHighSchoolCategory = document.getElementById('highSchoolCategory');
     inputHighSchoolStart = document.getElementById('highSchoolStart');
@@ -274,17 +274,19 @@ const searchHighSchool = () => {
 
 
                 markName = x[i]['highschoolName'].replace(searchedHighSchool, `<strong>${searchedHighSchool}</strong>`);
-                t.push(`<li><button id = i type="button" class="ellipsis" data-code="${x[i]['highschoolCode']}" title="${x[i]['highschoolName']}" >${markName}</button></li>`);
+                t.push(`<li><button id = i type="button" class="searchBtn1" data-code="${x[i]['highschoolCode']}" title="${x[i]['highschoolName']}" >${markName}</button></li>`);
             }
 
             $('#searchedHighSchools').html(`<ul class="searchResultList">${t.join('')}</ul>`);
         });
-
-    $(":button").click(function(){
-            //       console.log($(this).attr('data-code'))
+    console.log('func')
+    $(".searchBtn1").click(function(){
+            console.log('btn clicked');
         document.getElementById('searchedHighSchool').value = $(this).attr('title');
         inputHighSchoolCode = $(this).attr('data-code');
+        inputHighSchool = $(this).attr('title');
         $('#searchedHighSchools').html('');
+        $(".searchBtn1").off('click');
         }
     )
 
