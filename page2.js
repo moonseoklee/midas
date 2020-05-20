@@ -15,11 +15,13 @@ chrome.storage.local.get(['universityCode','universityEntranceType','universityS
     t2.push('<button type="button" class="resetSearchResult" data-button="resetSez`archResult"></button>');
     //////////////////////// html에 가시되지만 제대로 작동하지 않는다.
     if($(document).find(`input[name$="highschool.academyName"]`)!=null){
-    $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
+        $(document).find(`input[name$="highschool.academyName"]`).val(highSchoolName).next('span.searchResultName').html(t.join(''));
         $(document).find(`input[name$="highschool.academyCode"]`).val(highSchoolCode).focus();
     }
     if($(document).find(`input[name$="college[0].academyName"]`)!=null){
-        $(document).find(`input[name$="college[0].academyName"]`).val(universityName).next('span.searchResultName').html(t2.join(''));}
+        $(document).find(`input[name$="college[0].academyName"]`).val(universityName).next('span.searchResultName').html(t2.join(''));
+        $(document).find(`input[name$="college[0].academyName"]`).val(universityName).focus();
+    }
 
 
 
